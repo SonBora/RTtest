@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Lateral Skull Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="index.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Lateral Skull
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Lateral Skull Radiographic Projection
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotohead/headlat1.jpg">
+
+
+<img src="zphotohead/headlat3.jpg">
+
+
+<img src="zphotohead/headlat2.jpg">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The Lateral skull projection demonstrates the cranial bones, sella turcica, anterior and posterior clinoid processes, and facial structure profiles.
+
+</p>
+
+
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Skull
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+Lateral
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+24 × 30 cm (Crosswise)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+65 - 70
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+12 - 15
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient seated erect or semiprone with body rotated for comfort.
+
+<br><br>
+
+• Place side of head closest to IR (affected side down).
+
+<br><br>
+
+• Interpupillary line (IPL) perpendicular to IR.
+
+<br><br>
+
+• Infraorbitomeatal line (IOML) parallel to transverse border of IR.
+
+<br><br>
+
+• Mid-sagittal plane (MSP) parallel to IR plane.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• CR perpendicular to IR.
+
+<br><br>
+
+• Center CR 2 inches (5 cm) superior to External Auditory Meatus (EAM).
+
+<br><br>
+
+• Collimate on four sides to cover entire cranium.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Entire cranium displayed in profile.
+
+<br><br>
+
+✓ Superimposed orbital roofs and greater wings of sphenoid.
+
+<br><br>
+
+✓ Superimposed mandibular rami and temporomandibular joints.
+
+<br><br>
+
+✓ Sella turcica in profile without rotation.
+
+<br><br>
+
+✓ Sharp bony boundaries and clear detail of cranial bones.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Lateral Skull",
+
+subtitle:
+"Lateral Skull Radiographic Projection",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The Lateral skull projection demonstrates the cranial bones, sella turcica, anterior and posterior clinoid processes, and facial structure profiles.",
+
+
+
+bodyPart:
+"Skull",
+
+
+
+projection:
+"Lateral",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient seated erect or semiprone with body rotated for comfort.
+
+<br><br>
+
+• Place side of head closest to IR (affected side down).
+
+<br><br>
+
+• Interpupillary line (IPL) perpendicular to IR.
+
+<br><br>
+
+• Infraorbitomeatal line (IOML) parallel to transverse border of IR.
+
+<br><br>
+
+• Mid-sagittal plane (MSP) parallel to IR plane.
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• CR perpendicular to IR.
+
+<br><br>
+
+• Center CR 2 inches (5 cm) superior to External Auditory Meatus (EAM).
+
+<br><br>
+
+• Collimate on four sides to cover entire cranium.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Entire cranium displayed in profile.
+
+<br><br>
+
+✓ Superimposed orbital roofs and greater wings of sphenoid.
+
+<br><br>
+
+✓ Superimposed mandibular rami and temporomandibular joints.
+
+<br><br>
+
+✓ Sella turcica in profile without rotation.
+
+<br><br>
+
+✓ Sharp bony boundaries and clear detail of cranial bones.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតក្បាល Lateral",
+
+
+
+subtitle:
+"ការថតកាំរស្មីលលាដ៍ក្បាលទិស Lateral (ចំហៀង)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត Lateral Skull បង្ហាញឆ្អឹងលលាដ៍ក្បាល Sella turcica និងទម្រង់មុខផ្នែកចំហៀង។",
+
+
+
+bodyPart:
+"លលាដ៍ក្បាល",
+
+
+
+projection:
+"Lateral (ចំហៀង)",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺអង្គុយត្រង់ ឬដេកផ្អៀងដើម្បីភាពងាយស្រួល។
+
+<br><br>
+
+• ដាក់ផ្នែកចំហៀងក្បាលអោយកៀកនឹង IR។
+
+<br><br>
+
+• ខ្សែ IPL (Interpupillary line) ត្រូវដាក់កែងជាមួយ IR។
+
+<br><br>
+
+• ខ្សែ IOML ត្រូវស្របទៅនឹងគែមទទឹងនៃ IR។
+
+<br><br>
+
+• ប្លង់ MSP (Mid-sagittal plane) ត្រូវស្របទៅនឹង IR។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់កែងទៅ IR។
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ 2 អ៊ីញ (5 cm) ពីលើ EAM (រន្ធត្រចៀក)។
+
+<br><br>
+
+• កំណត់ព្រំដែនឲ្យគ្របដណ្តប់លលាដ៍ក្បាលទាំងមូល។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ បង្ហាញលលាដ៍ក្បាលទាំងមូលផ្នែកចំហៀង។
+
+<br><br>
+
+✓ ពិដានរន្ធភ្នែក និង Greater wings នៃ sphenoid តម្រួតលើគ្នា។
+
+<br><br>
+
+✓ ឆ្អឹងថ្គាមក្រោម (Mandibular rami) និងសន្លាក់ TMJ តម្រួតលើគ្នា។
+
+<br><br>
+
+✓ បង្ហាញ Sella turcica ច្បាស់ដោយគ្មានការបង្វិល។
+
+<br><br>
+
+✓ ឃើញគែមឆ្អឹងច្បាស់ និងលម្អិត។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

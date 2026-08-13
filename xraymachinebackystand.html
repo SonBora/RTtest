@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>X-Ray Tube Alignment Simulator (Mobile Optimized)</title>
+  <style>
+    * { 
+      box-sizing: border-box; 
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #121418;
+      color: #e1e4e8;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      height: 100dvh; /* Mobile viewport height fix */
+      overflow: hidden;
+    }
+    
+    /* Dynamic Top Viewport for Visualizer */
+    #sim-container {
+      flex: 0 0 40vh;
+      min-height: 220px;
+      position: relative;
+      background: #1e222b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid #2d333f;
+      overflow: hidden;
+    }
+    svg { width: 100%; height: 100%; }
+
+    /* Scrollable Bottom Control Console for Mobile */
+    #console-container {
+      flex: 1;
+      background: #181b20;
+      padding: 12px 16px 24px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    h2 { margin: 0; font-size: 15px; color: #00adb5; text-transform: uppercase; letter-spacing: 0.5px; }
+    .sub-title { font-size: 10px; color: #8b949e; margin-bottom: 2px; }
+
+    .control-card {
+      background: #22272e;
+      border: 1px solid #373e47;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    
+    .control-card label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #adbac7;
+    }
+
+    /* Enhanced Mobile Touch Sliders */
+    .slider-container {
+      display: flex;
+      align-items: center;
+      height: 36px;
+    }
+    
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background: transparent;
+    }
+    
+    input[type=range]:focus {
+      outline: none;
+    }
+
+    /* Track Styles */
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      cursor: pointer;
+      background: #121418;
+      border-radius: 4px;
+      border: 1px solid #373e47;
+    }
+    input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 8px;
+      cursor: pointer;
+      background: #121418;
+      border-radius: 4px;
+      border: 1px solid #373e47;
+    }
+
+    /* Oversized Mobile Thumbs for Easy Touch */
+    input[type=range]::-webkit-slider-thumb {
+      height: 26px;
+      width: 26px;
+      border-radius: 50%;
+      background: #00adb5;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -9px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      border: 2px solid #ffffff;
+    }
+    input[type=range]::-moz-range-thumb {
+      height: 26px;
+      width: 26px;
+      border-radius: 50%;
+      background: #00adb5;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      border: 2px solid #ffffff;
+    }
+
+    /* Larger Touch-Friendly Buttons */
+    .btn-group { display: flex; gap: 8px; }
+    .btn {
+      flex: 1;
+      min-height: 42px;
+      padding: 6px;
+      background: #2d333f;
+      border: 1px solid #444c56;
+      color: #adbac7;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .btn.active {
+      background: #00adb5;
+      color: #fff;
+      border-color: #00adb5;
+      box-shadow: 0 0 10px rgba(0, 173, 181, 0.4);
+    }
+
+    #exposeBtn {
+      background: #d9383a;
+      color: white;
+      border: none;
+      min-height: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 6px;
+      user-select: none;
+      box-shadow: 0 4px 12px rgba(217, 56, 58, 0.3);
+      flex-shrink: 0;
+    }
+    #exposeBtn.exposing { background: #ffaa00; color: #000; box-shadow: 0 4px 12px rgba(255, 170, 0, 0.4); }
+
+    /* Compact Mobile HUD */
+    #hud-readout {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: rgba(24, 27, 32, 0.85);
+      border: 1px solid #373e47;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 10px;
+      pointer-events: none;
+      line-height: 1.4;
+      backdrop-filter: blur(4px);
+    }
+    .status-ready { color: #2ecc71; font-weight: bold; }
+    .status-warn { color: #e74c3c; font-weight: bold; }
+
+    #resultModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.9);
+      z-index: 100;
+      align-items: center; justify-content: center;
+      padding: 16px;
+    }
+    .modal-content {
+      background: #181b20;
+      border: 2px solid #00adb5;
+      border-radius: 12px;
+      padding: 16px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .modal-content img { max-width: 100%; max-height: 50vh; border-radius: 8px; margin: 12px 0; object-fit: contain; }
+    .close-btn { 
+      background: #00adb5; 
+      color: white; 
+      border: none; 
+      min-height: 44px;
+      width: 100%;
+      border-radius: 8px; 
+      cursor: pointer; 
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sim-container">
+    <div id="hud-readout">
+      <div><strong>ALIGNMENT SIMULATOR</strong></div>
+      <div>Angle: <span id="angleReadout" style="color:#ffaa00;">0°</span></div>
+      <div>Field: <span id="fieldReadout" style="color:#00adb5;">35 x 35 cm</span></div>
+      <div>Status: <span id="alignReadout" class="status-ready">CENTERED</span></div>
+    </div>
+
+    <svg id="simSvg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+      <line x1="50" y1="560" x2="750" y2="560" stroke="#373e47" stroke-width="4"/>
+      <line x1="720" y1="40" x2="720" y2="560" stroke="#373e47" stroke-width="6"/>
+
+      <!-- Vertical IR Bucky Stand -->
+      <g id="verticalBuckyGroup" transform="translate(700, 280)">
+        <rect x="0" y="-120" width="18" height="240" fill="#2d333f" stroke="#444c56" rx="3"/>
+        <rect x="-12" y="-90" width="12" height="180" fill="#adbac7" stroke="#ffffff" stroke-width="2" rx="3"/>
+        <circle cx="-6" cy="0" r="4" fill="#d9383a"/>
+      </g>
+
+      <!-- Human Phantom -->
+      <g id="humanPhantomGroup" transform="translate(660, 310)">
+        <g id="phantomFlipper" transform="scale(1, 1)">
+          <text x="35" y="-210" fill="#00adb5" font-size="10" font-weight="bold">HEAD (CEPHALAD)</text>
+          <circle cx="0" cy="-210" r="22" fill="#3a4350" stroke="#718096" stroke-width="2"/>
+          <circle cx="0" cy="-210" r="16" fill="#1e222b" stroke="#cbd5e0" stroke-width="1.5"/>
+          
+          <rect x="-6" y="-188" width="12" height="18" fill="#3a4350"/>
+          <path d="M-30,-170 Q0,-180 30,-170 L25,-40 Q0,-30 -25,-40 Z" fill="#3a4350" stroke="#718096" stroke-width="2"/>
+          <line x1="-12" y1="-185" x2="-12" y2="100" stroke="#e2e8f0" stroke-width="6" stroke-dasharray="4,2"/>
+          
+          <text x="35" y="230" fill="#ffaa00" font-size="10" font-weight="bold">FEET (CAUDAD)</text>
+          <path d="M-26,-40 Q0,-50 26,-40 L20,20 Q0,30 -20,20 Z" fill="#3a4350" stroke="#718096" stroke-width="2"/>
+          <rect x="-22" y="20" width="16" height="220" fill="#3a4350" stroke="#718096" rx="4"/>
+          <rect x="6" y="20" width="16" height="220" fill="#3a4350" stroke="#718096" rx="4"/>
+        </g>
+      </g>
+
+      <!-- Overhead X-Ray Tube Assembly -->
+      <g id="tubeAssembly" transform="translate(180, 280)">
+        <line x1="0" y1="-240" x2="0" y2="-20" stroke="#2d333f" stroke-width="14"/>
+        
+        <g id="tubeHeadPivot">
+          <rect x="-35" y="-25" width="70" height="50" fill="#00adb5" rx="8" stroke="#ffffff" stroke-width="1.5"/>
+          <circle cx="0" cy="0" r="10" fill="#181b20"/>
+          <rect x="25" y="-20" width="25" height="40" fill="#373e47" stroke="#adbac7" rx="2"/>
+
+          <!-- Primary Beam & Central Ray -->
+          <polygon id="collimatorLightBeam" points="50,-12 508,-75 508,75 50,12" fill="rgba(255, 235, 59, 0.25)" stroke="rgba(255, 235, 59, 0.6)" stroke-dasharray="4,4"/>
+          <polygon id="xrayBeam" points="50,-4 508,-70 508,70 50,4" fill="rgba(0, 255, 255, 0.0)"/>
+          <line x1="50" y1="0" x2="508" y2="0" stroke="#ffaa00" stroke-width="1.5" stroke-dasharray="3,3"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div id="console-container">
+    <div>
+      <h2>Positioning Controls</h2>
+      <div class="sub-title">Cephalic/Caudal & Collimation</div>
+    </div>
+
+    <!-- Projection Toggle -->
+    <div class="control-card">
+      <label>Patient Projection: <span id="orientReadout" style="color:#00adb5;">PA</span></label>
+      <div class="btn-group">
+        <button class="btn active" id="btnPA">PA Position</button>
+        <button class="btn" id="btnAP">AP Position</button>
+      </div>
+    </div>
+
+    <!-- Cephalic / Caudal Angulation Controls -->
+    <div class="control-card">
+      <label>
+        <span>Tube Direction</span>
+        <span id="angleTypeVal" style="color:#00adb5;">Perpendicular (0°)</span>
+      </label>
+      <div class="btn-group" style="margin-bottom:10px;">
+        <button class="btn" id="btnCephalic">Cephalic (Up)</button>
+        <button class="btn active" id="btnZero">0° Direct</button>
+        <button class="btn" id="btnCaudal">Caudal (Down)</button>
+      </div>
+
+      <label>
+        <span>Angle Degree</span>
+        <span id="angleDegVal" style="color:#ffaa00;">0°</span>
+      </label>
+      <div class="slider-container">
+        <input type="range" id="angleDegSlider" min="0" max="45" value="0">
+      </div>
+    </div>
+
+    <!-- Field Size / Collimation Control -->
+    <div class="control-card">
+      <label>
+        <span>Field Size (Collimation)</span>
+        <span id="fieldSizeVal" style="color:#00adb5;">35 cm</span>
+      </label>
+      <div class="slider-container">
+        <input type="range" id="fieldSizeSlider" min="10" max="43" value="35">
+      </div>
+    </div>
+
+    <!-- Tube & IR Heights -->
+    <div class="control-card">
+      <label>
+        <span>X-Ray Tube Height</span>
+        <span id="tubeHeightVal" style="color:#00adb5;">280 cm</span>
+      </label>
+      <div class="slider-container">
+        <input type="range" id="tubeHeightSlider" min="150" max="450" value="280">
+      </div>
+    </div>
+
+    <div class="control-card">
+      <label>
+        <span>Vertical IR Height</span>
+        <span id="irHeightVal" style="color:#00adb5;">280 cm</span>
+      </label>
+      <div class="slider-container">
+        <input type="range" id="irHeightSlider" min="150" max="450" value="280">
+      </div>
+    </div>
+
+    <!-- SID -->
+    <div class="control-card">
+      <label>
+        <span>SID Distance</span>
+        <span id="sidVal" style="color:#00adb5;">180 cm</span>
+      </label>
+      <div class="slider-container">
+        <input type="range" id="sidSlider" min="100" max="200" value="180" step="5">
+      </div>
+    </div>
+
+    <button id="exposeBtn">HOLD TO EXPOSE</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="resultModal">
+    <div class="modal-content">
+      <h3 style="margin:0; font-size: 15px; color:#00adb5;" id="modalTitle">Radiograph Result</h3>
+      <img id="resultImage" src="" alt="X-Ray Result"/>
+      <div>
+        <button class="close-btn" id="closeModalBtn">CLOSE RADIOGRAPH</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tubeAssembly = document.getElementById('tubeAssembly');
+    const tubeHeadPivot = document.getElementById('tubeHeadPivot');
+    const verticalBuckyGroup = document.getElementById('verticalBuckyGroup');
+    const phantomFlipper = document.getElementById('phantomFlipper');
+    const collimatorLightBeam = document.getElementById('collimatorLightBeam');
+    const xrayBeam = document.getElementById('xrayBeam');
+
+    const btnPA = document.getElementById('btnPA');
+    const btnAP = document.getElementById('btnAP');
+    const btnCephalic = document.getElementById('btnCephalic');
+    const btnZero = document.getElementById('btnZero');
+    const btnCaudal = document.getElementById('btnCaudal');
+    const angleDegSlider = document.getElementById('angleDegSlider');
+    const fieldSizeSlider = document.getElementById('fieldSizeSlider');
+
+    const tubeHeightSlider = document.getElementById('tubeHeightSlider');
+    const irHeightSlider = document.getElementById('irHeightSlider');
+    const sidSlider = document.getElementById('sidSlider');
+
+    const orientReadout = document.getElementById('orientReadout');
+    const angleReadout = document.getElementById('angleReadout');
+    const fieldReadout = document.getElementById('fieldReadout');
+    const angleTypeVal = document.getElementById('angleTypeVal');
+    const angleDegVal = document.getElementById('angleDegVal');
+    const fieldSizeVal = document.getElementById('fieldSizeVal');
+    const alignReadout = document.getElementById('alignReadout');
+
+    const exposeBtn = document.getElementById('exposeBtn');
+    const resultModal = document.getElementById('resultModal');
+    const resultImage = document.getElementById('resultImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    let angulationMode = 'ZERO';
+    let angleDeg = 0;
+    let fieldSize = 35;
+    let currentOrientation = 'PA';
+    let tubeY = 280;
+    let irY = 280;
+    let sid = 180;
+
+    // Web Audio Context setup for Exposure Sounds
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    function playRotorSound() {
+      initAudio();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(450, audioCtx.currentTime + 0.3);
+      gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.3);
+    }
+
+    function playBuzzerSound() {
+      initAudio();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.8);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.8);
+    }
+
+    function setAngulationMode(mode) {
+      angulationMode = mode;
+      btnCephalic.classList.toggle('active', mode === 'CEPHALIC');
+      btnZero.classList.toggle('active', mode === 'ZERO');
+      btnCaudal.classList.toggle('active', mode === 'CAUDAL');
+
+      if (mode === 'ZERO') {
+        angleDeg = 0;
+        angleDegSlider.value = 0;
+      } else if (angleDeg === 0) {
+        angleDeg = 15;
+        angleDegSlider.value = 15;
+      }
+      updatePositions();
+    }
+
+    btnCephalic.addEventListener('click', () => setAngulationMode('CEPHALIC'));
+    btnZero.addEventListener('click', () => setAngulationMode('ZERO'));
+    btnCaudal.addEventListener('click', () => setAngulationMode('CAUDAL'));
+
+    angleDegSlider.addEventListener('input', (e) => {
+      angleDeg = parseInt(e.target.value);
+      if (angleDeg === 0) {
+        setAngulationMode('ZERO');
+      } else if (angulationMode === 'ZERO') {
+        setAngulationMode('CEPHALIC');
+      }
+      updatePositions();
+    });
+
+    fieldSizeSlider.addEventListener('input', (e) => {
+      fieldSize = parseInt(e.target.value);
+      fieldSizeVal.textContent = `${fieldSize} cm`;
+      fieldReadout.textContent = `${fieldSize} x ${fieldSize} cm`;
+      updatePositions();
+    });
+
+    btnPA.addEventListener('click', () => {
+      currentOrientation = 'PA';
+      btnPA.classList.add('active');
+      btnAP.classList.remove('active');
+      phantomFlipper.setAttribute('transform', 'scale(1, 1)');
+      orientReadout.textContent = "PA";
+    });
+
+    btnAP.addEventListener('click', () => {
+      currentOrientation = 'AP';
+      btnAP.classList.add('active');
+      btnPA.classList.remove('active');
+      phantomFlipper.setAttribute('transform', 'scale(-1, 1)');
+      orientReadout.textContent = "AP";
+    });
+
+    function updatePositions() {
+      let effectiveAngle = 0;
+      if (angulationMode === 'CEPHALIC') effectiveAngle = -angleDeg;
+      if (angulationMode === 'CAUDAL') effectiveAngle = angleDeg;
+
+      const tubeX = 680 - (sid * 2.8);
+      tubeAssembly.setAttribute('transform', `translate(${tubeX}, ${tubeY})`);
+      verticalBuckyGroup.setAttribute('transform', `translate(680, ${irY})`);
+      tubeHeadPivot.setAttribute('transform', `rotate(${effectiveAngle})`);
+
+      // Field Size (Collimation) Scaling on SVG Beam
+      const halfSpread = fieldSize * 2.5; 
+      const lightPts = `50,-12 508,-${halfSpread} 508,${halfSpread} 50,12`;
+      const xrayPts = `50,-4 508,-${halfSpread - 5} 508,${halfSpread - 5} 50,4`;
+      
+      collimatorLightBeam.setAttribute('points', lightPts);
+      xrayBeam.setAttribute('points', xrayPts);
+
+      // Readouts
+      angleDegVal.textContent = `${angleDeg}°`;
+
+      if (angulationMode === 'ZERO') {
+        angleTypeVal.textContent = "0° Direct";
+        angleReadout.textContent = "0°";
+      } else if (angulationMode === 'CEPHALIC') {
+        angleTypeVal.textContent = `Cephalic (-${angleDeg}°)`;
+        angleReadout.textContent = `${angleDeg}° Cephalic`;
+      } else {
+        angleTypeVal.textContent = `Caudal (+${angleDeg}°)`;
+        angleReadout.textContent = `${angleDeg}° Caudal`;
+      }
+
+      const diff = Math.abs(tubeY - irY);
+      if (diff < 15 && angleDeg === 0) {
+        alignReadout.textContent = "CENTERED";
+        alignReadout.className = "status-ready";
+      } else {
+        alignReadout.textContent = "OFF-CENTER";
+        alignReadout.className = "status-warn";
+      }
+    }
+
+    tubeHeightSlider.addEventListener('input', (e) => {
+      tubeY = parseInt(e.target.value);
+      document.getElementById('tubeHeightVal').textContent = `${tubeY} cm`;
+      updatePositions();
+    });
+
+    irHeightSlider.addEventListener('input', (e) => {
+      irY = parseInt(e.target.value);
+      document.getElementById('irHeightVal').textContent = `${irY} cm`;
+      updatePositions();
+    });
+
+    sidSlider.addEventListener('input', (e) => {
+      sid = parseInt(e.target.value);
+      document.getElementById('sidVal').textContent = `${sid} cm`;
+      updatePositions();
+    });
+
+    let exposeTimer;
+    
+    function startExposure(e) {
+      if (e.type === 'touchstart') e.preventDefault();
+      exposeBtn.classList.add('exposing');
+      exposeBtn.textContent = "ROTOR SPINNING...";
+      playRotorSound();
+
+      exposeTimer = setTimeout(() => {
+        exposeBtn.textContent = "EXPOSING...";
+        playBuzzerSound();
+        xrayBeam.setAttribute('fill', 'rgba(0, 255, 255, 0.7)');
+
+        setTimeout(() => {
+          exposeBtn.classList.remove('exposing');
+          exposeBtn.textContent = "HOLD TO EXPOSE";
+          xrayBeam.setAttribute('fill', 'rgba(0, 255, 255, 0.0)');
+          
+          modalTitle.textContent = `Chest Radiograph (${currentOrientation}, ${angleReadout.textContent})`;
+          resultImage.src = 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg';
+          resultModal.style.display = 'flex';
+        }, 500);
+      }, 300);
+    }
+
+    function cancelExposure() {
+      clearTimeout(exposeTimer);
+      if (exposeBtn.classList.contains('exposing')) {
+        exposeBtn.classList.remove('exposing');
+        exposeBtn.textContent = "HOLD TO EXPOSE";
+      }
+    }
+
+    exposeBtn.addEventListener('mousedown', startExposure);
+    exposeBtn.addEventListener('touchstart', startExposure);
+    exposeBtn.addEventListener('mouseup', cancelExposure);
+    exposeBtn.addEventListener('touchend', cancelExposure);
+
+    closeModalBtn.addEventListener('click', () => { resultModal.style.display = 'none'; });
+
+    updatePositions();
+  </script>
+</body>
+</html>

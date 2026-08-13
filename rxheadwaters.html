@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Waters View Skull Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="index.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Waters View
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Parietoacanthial Projection (Waters Method)
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotohead/headwaters1.jpg">
+
+
+<img src="zphotohead/headwaters3.jpg">
+
+
+<img src="zphotohead/headwaters2.jpg">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The Waters projection demonstrates the maxillary sinuses, facial bones, orbits, and zygomatic arches with minimal bony overlap.
+
+</p>
+
+
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Facial Bones / Sinuses
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+Parietoacanthial (Waters)
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+24 × 30 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+75 - 80
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+20 - 25
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient facing the image receptor (upright or prone).
+
+<br><br>
+
+• Extend neck and place chin against IR surface.
+
+<br><br>
+
+• MML (Mentomeatal Line) perpendicular to IR plane.
+
+<br><br>
+
+• OML (Orbitomeatal Line) forms a 37° angle with the IR plane.
+
+<br><br>
+
+• MSP (Mid-sagittal Plane) perpendicular to IR midline.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• CR perpendicular to IR.
+
+<br><br>
+
+• Center Central Ray to exit at the acanthion.
+
+<br><br>
+
+• Collimate to include all facial bones and maxillary sinuses.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Maxillary sinuses clearly demonstrated without petrous overlap.
+
+<br><br>
+
+✓ Petrous ridges projected completely inferior to maxillary sinuses.
+
+<br><br>
+
+✓ No rotation of facial bones (equal distance from outer lateral border to orbits).
+
+<br><br>
+
+✓ Orbits, zygomatic arches, and facial bones well visualized.
+
+<br><br>
+
+✓ Sharp bony margins and clear sinus aeration detail.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Waters View",
+
+subtitle:
+"Parietoacanthial Projection (Waters Method)",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The Waters projection demonstrates the maxillary sinuses, facial bones, orbits, and zygomatic arches with minimal bony overlap.",
+
+
+
+bodyPart:
+"Facial Bones / Sinuses",
+
+
+
+projection:
+"Parietoacanthial (Waters)",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient facing the image receptor (upright or prone).
+
+<br><br>
+
+• Extend neck and place chin against IR surface.
+
+<br><br>
+
+• MML (Mentomeatal Line) perpendicular to IR plane.
+
+<br><br>
+
+• OML (Orbitomeatal Line) forms a 37° angle with the IR plane.
+
+<br><br>
+
+• MSP (Mid-sagittal Plane) perpendicular to IR midline.
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• CR perpendicular to IR.
+
+<br><br>
+
+• Center Central Ray to exit at the acanthion.
+
+<br><br>
+
+• Collimate to include all facial bones and maxillary sinuses.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Maxillary sinuses clearly demonstrated without petrous overlap.
+
+<br><br>
+
+✓ Petrous ridges projected completely inferior to maxillary sinuses.
+
+<br><br>
+
+✓ No rotation of facial bones (equal distance from outer lateral border to orbits).
+
+<br><br>
+
+✓ Orbits, zygomatic arches, and facial bones well visualized.
+
+<br><br>
+
+✓ Sharp bony margins and clear sinus aeration detail.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថត Waters View",
+
+
+
+subtitle:
+"ការថតកាំរស្មីមុខទិស Parietoacanthial (វិធីសាស្ត្រ Waters)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត Waters View បង្ហាញ រន្ធស៊ីនុស Maxillary sinus, ឆ្អឹងមុខ, រន្ធភ្នែក និង ឆ្អឹងថ្ពាល់ (Zygomatic arches) ដោយកាត់បន្ថយការបាំងនៃឆ្អឹងផ្សេងៗ។",
+
+
+
+bodyPart:
+"ឆ្អឹងមុខ / ស៊ីនុស",
+
+
+
+projection:
+"Parietoacanthial (Waters)",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺបែរមុខទៅរក IR (ឈរ ឬដេកផ្អាប់)។
+
+<br><br>
+
+• ងើបក និងដាក់ចង្កាអោយប៉ះផ្ទៃ IR។
+
+<br><br>
+
+• ខ្សែ MML (Mentomeatal Line) ត្រូវដាក់កែងជាមួយ IR។
+
+<br><br>
+
+• ខ្សែ OML បង្កើតបានមុំ 37° ជាមួយប្លង់ IR។
+
+<br><br>
+
+• ប្លង់ MSP ត្រូវដាក់កែងជាមួយខ្សែបន្ទាត់កណ្ដាល IR។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់កែងទៅ IR។
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ចេញចំ Acanthion (ក្រោមច្រមុះ)។
+
+<br><br>
+
+• កំណត់ព្រំដែនឲ្យគ្របដណ្តប់ឆ្អឹងមុខ និង Maxillary sinuses ទាំងមូល។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ បង្ហាញ Maxillary sinuses ច្បាស់ដោយគ្មាន Petrous ridge បាំង។
+
+<br><br>
+
+✓ Petrous ridges នៅខាងក្រោមបាតនៃ Maxillary sinuses ទាំងស្រុង។
+
+<br><br>
+
+✓ គ្មានការបង្វិលឆ្អឹងមុខ (ចម្ងាយពីគែមខាងក្រៅទៅរន្ធភ្នែកស្មើគ្នា)។
+
+<br><br>
+
+✓ បង្ហាញរន្ធភ្នែក, ឆ្អឹងថ្ពាល់ និងឆ្អឹងមុខបានច្បាស់ល្អ។
+
+<br><br>
+
+✓ ឃើញគែមឆ្អឹង និងខ្យល់ក្នុងស៊ីនុសច្បាស់។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

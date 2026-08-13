@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>AP Lordotic Chest Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="rxchestlordotic.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+AP Lordotic Chest
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Anteroposterior Lordotic Chest Projection (Lindblom Method)
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotochest/chestlord1.jpg" alt="AP Lordotic Chest Positioning 1">
+
+
+<img src="zphotochest/chestlord2.jpg" alt="AP Lordotic Chest Positioning 2">
+
+
+<img src="zphotochest/chestlord3.jpg" alt="AP Lordotic Chest Positioning 3">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The AP lordotic chest projection project the clavicles above the lung apices. It is specifically utilized to rule out or evaluate pathology and lesions in the apical regions of the lungs.
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Chest / Lung Apices
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+AP Axial / Lordotic (Lindblom Method)
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+35 × 43 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+180 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+110 – 125
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+4 – 6
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient standing approx. 30 cm (1 foot) away from IR, facing x-ray tube.
+
+<br><br>
+
+• Lean backward with shoulders, neck, and back resting against upper IR (Lordotic stance).
+
+<br><br>
+
+• Place hands on lower hips, roll shoulders forward to move scapulae out of lung fields.
+
+<br><br>
+
+• MSP perpendicular to midline of IR.
+
+<br><br>
+
+• Exposure made on end of second full inspiration.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• CR perpendicular to IR (if patient leans back into full lordotic posture).
+
+<br><br>
+
+• Alternative (AP Axial): If patient cannot lean, angle CR 15–20° cephalad.
+
+<br><br>
+
+• Center Central Ray to mid-sternum (level of T7 / 9 cm below jugular notch).
+
+<br><br>
+
+• Collimate to include lung apices and upper thoracic fields.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Clavicles projected superior to lung apices.
+
+<br><br>
+
+✓ Medial ends of clavicles superimposed on 1st or 2nd ribs.
+
+<br><br>
+
+✓ Ribs appear distorted with anterior and posterior parts superimposed.
+
+<br><br>
+
+✓ Entire lung fields included, especially apical areas clearly visualized.
+
+<br><br>
+
+✓ No rotation: sternoclavicular joints equidistant from vertebral column.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"AP Lordotic Chest",
+
+subtitle:
+"Anteroposterior Lordotic Chest Projection (Lindblom Method)",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The AP lordotic chest projection project the clavicles above the lung apices. It is specifically utilized to rule out or evaluate pathology and lesions in the apical regions of the lungs.",
+
+
+
+bodyPart:
+"Chest / Lung Apices",
+
+
+
+projection:
+"AP Axial / Lordotic (Lindblom Method)",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient standing approx. 30 cm (1 foot) away from IR, facing x-ray tube.
+
+<br><br>
+
+• Lean backward with shoulders, neck, and back resting against upper IR (Lordotic stance).
+
+<br><br>
+
+• Place hands on lower hips, roll shoulders forward to move scapulae out of lung fields.
+
+<br><br>
+
+• MSP perpendicular to midline of IR.
+
+<br><br>
+
+• Exposure made on end of second full inspiration.
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• CR perpendicular to IR (if patient leans back into full lordotic posture).
+
+<br><br>
+
+• Alternative (AP Axial): If patient cannot lean, angle CR 15–20° cephalad.
+
+<br><br>
+
+• Center Central Ray to mid-sternum (level of T7 / 9 cm below jugular notch).
+
+<br><br>
+
+• Collimate to include lung apices and upper thoracic fields.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Clavicles projected superior to lung apices.
+
+<br><br>
+
+✓ Medial ends of clavicles superimposed on 1st or 2nd ribs.
+
+<br><br>
+
+✓ Ribs appear distorted with anterior and posterior parts superimposed.
+
+<br><br>
+
+✓ Entire lung fields included, especially apical areas clearly visualized.
+
+<br><br>
+
+✓ No rotation: sternoclavicular joints equidistant from vertebral column.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតទ្រូង AP Lordotic",
+
+
+
+subtitle:
+"ការថតកាំរស្មីទ្រូងទិស Anteroposterior Lordotic (Lindblom Method)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត AP Lordotic Chest បាញ់រុញឆ្អឹងដងកាំបិត (Clavicles) ឱ្យផុតពីចុងលើសួត (Apices)។ វាត្រូវបានប្រើជាពិសេសដើម្បីពិនិត្យមើលជំងឺ ឬដំបៅនៅតំបន់ចុងលើសួត។",
+
+
+
+bodyPart:
+"ទ្រូង / ចុងលើសួត (Lung Apices)",
+
+
+
+projection:
+"AP Axial / Lordotic (Lindblom Method)",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺឈរចម្ងាយប្រហែល 30 ស.ម (1 ហ្វុត) ពី IR ដោយបែរមុខទៅរកបំពង់ x-ray។
+
+<br><br>
+
+• ផ្អៀងខ្លួនទៅក្រោយ ដោយយកស្មា ក និងខ្នងផ្អែកលើ IR (ទម្រង់ Lordotic)។
+
+<br><br>
+
+• ដាក់ដៃលើត្រគាក ហើយរុញស្មាទៅមុខដើម្បីបើកឆ្អឹងស្លាបប្រជៀវ (Scapulae) ចេញពីសួត។
+
+<br><br>
+
+• ខ្សែបន្ទាត់ MSP ត្រូវនៅចំកណ្តាល និងកែងជាមួយនឹង IR។
+
+<br><br>
+
+• ថតនៅពេលអ្នកជំងឺដកដង្ហើមចូលពេញលើកទីពីរ ហើយទប់ដង្ហើម។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់កែងទៅ IR (ប្រសិនបើអ្នកជំងឺផ្អៀងខ្លួនបានពេញលេញ)។
+
+<br><br>
+
+• វិធីសាស្រ្តជំនួស (AP Axial)៖ ប្រសិនបើអ្នកជំងឺមិនអាចផ្អៀងខ្លួនបាន ត្រូវបាញ់ CR ងើយឡើងលើ (cephalad) 15–20°។
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ចូលចំកណ្តាល Sternum (កម្រិត T7 / ប្រហែល 9 ស.ម ក្រោម Jugular Notch)។
+
+<br><br>
+
+• កំណត់ព្រំដែនពន្លឺឱ្យគ្របដណ្តប់ចុងលើសួត និងផ្នែកទ្រូងខាងលើ។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ ឆ្អឹងដងកាំបិត (Clavicles) ផ្លាស់ទីទៅលើផុតពីចុងលើសួត (Apices)។
+
+<br><br>
+
+✓ ចុងខាងក្នុងនៃឆ្អឹងដងកាំបិតត្រួតលើឆ្អឹងជំនីរទី 1 ឬទី 2។
+
+<br><br>
+
+✓ ឆ្អឹងជំនីរមើលទៅប្រែប្រួលទម្រង់ ដោយផ្នែកខាងមុខ និងខាងក្រោយត្រួតស៊ីគ្នា។
+
+<br><br>
+
+✓ បង្ហាញវាលសួតទាំងមូល ជាពិសេសតំបន់ Apices មើលឃើញច្បាស់លាស់។
+
+<br><br>
+
+✓ គ្មានការបង្វិល៖ សន្លាក់ Sternoclavicular មានចម្ងាយស្មើគ្នាពីឆ្អឹងខ្នង។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

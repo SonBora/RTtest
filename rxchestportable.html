@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Chest AP Portable Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="rxchestportable.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Chest AP Portable
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Anteroposterior Bedside / Mobile Chest Radiographic Projection
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotochest/chestport1.jpg" alt="Chest AP Portable Positioning 1">
+
+
+<img src="zphotochest/chestport2.jpg" alt="Chest AP Portable Positioning 2">
+
+
+<img src="zphotochest/chestport3.jpg" alt="Chest AP Portable Positioning 3">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The AP portable chest projection is performed at the patient's bedside for critically ill, non-ambulatory, or postoperative patients. It evaluates pulmonary pathology, line/tube placements (ET tube, CVP line), and cardiac size.
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Chest / Thorax
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+Anteroposterior (AP) Portable
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+35 × 43 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 – 180 cm (Minimum 100 cm)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+80 – 90 (or 110–120 with grid)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+2 – 4
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient seated erect or semi-erect in bed as much as tolerated (supine if condition requires).
+
+<br><br>
+
+• Place Image Receptor behind patient's back, aligned with top of IR approx. 4–5 cm above shoulders.
+
+<br><br>
+
+• Roll shoulders forward and rotate arms internally to move scapulae out of lung fields.
+
+<br><br>
+
+• Mid-sagittal plane (MSP) centered perpendicular to IR.
+
+<br><br>
+
+• Exposure made on full inspiration (or at peak of breath in ventilated patients).
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• Central Ray angled caudad to be perpendicular to long axis of sternum (prevents clavicular overlap).
+
+<br><br>
+
+• Center Central Ray to mid-sternum, level of T7 (approx. 8–10 cm below jugular notch).
+
+<br><br>
+
+• Ensure CR is perpendicular to plane of Image Receptor.
+
+<br><br>
+
+• Collimate on four sides to outer chest margins.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Entire lung fields included from apices down to costophrenic angles.
+
+<br><br>
+
+✓ Adequate inspiration shown (preferably 8–10 posterior ribs above diaphragm).
+
+<br><br>
+
+✓ Clavicles projected in upper lung fields above 3rd ribs.
+
+<br><br>
+
+✓ No rotation: sternoclavicular joints equidistant from vertebral spine.
+
+<br><br>
+
+✓ Clear visualization of endotracheal tube, central venous catheters, or medical lines if present.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Chest AP Portable",
+
+subtitle:
+"Anteroposterior Bedside / Mobile Chest Radiographic Projection",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The AP portable chest projection is performed at the patient's bedside for critically ill, non-ambulatory, or postoperative patients. It evaluates pulmonary pathology, line/tube placements (ET tube, CVP line), and cardiac size.",
+
+
+
+bodyPart:
+"Chest / Thorax",
+
+
+
+projection:
+"Anteroposterior (AP) Portable",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient seated erect or semi-erect in bed as much as tolerated (supine if condition requires).
+
+<br><br>
+
+• Place Image Receptor behind patient's back, aligned with top of IR approx. 4–5 cm above shoulders.
+
+<br><br>
+
+• Roll shoulders forward and rotate arms internally to move scapulae out of lung fields.
+
+<br><br>
+
+• Mid-sagittal plane (MSP) centered perpendicular to IR.
+
+<br><br>
+
+• Exposure made on full inspiration (or at peak of breath in ventilated patients).
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• Central Ray angled caudad to be perpendicular to long axis of sternum (prevents clavicular overlap).
+
+<br><br>
+
+• Center Central Ray to mid-sternum, level of T7 (approx. 8–10 cm below jugular notch).
+
+<br><br>
+
+• Ensure CR is perpendicular to plane of Image Receptor.
+
+<br><br>
+
+• Collimate on four sides to outer chest margins.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Entire lung fields included from apices down to costophrenic angles.
+
+<br><br>
+
+✓ Adequate inspiration shown (preferably 8–10 posterior ribs above diaphragm).
+
+<br><br>
+
+✓ Clavicles projected in upper lung fields above 3rd ribs.
+
+<br><br>
+
+✓ No rotation: sternoclavicular joints equidistant from vertebral spine.
+
+<br><br>
+
+✓ Clear visualization of endotracheal tube, central venous catheters, or medical lines if present.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតទ្រូង AP Portable (តាមគ្រែ)",
+
+
+
+subtitle:
+"ការថតកាំរស្មីទ្រូងទិស Anteroposterior នៅតាមគ្រែអ្នកជំងឺ (Mobile X-Ray)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត Chest AP Portable ត្រូវធ្វើឡើងនៅតាមគ្រែសម្រាប់អ្នកជំងឺធ្ងន់ធ្ងរ មិនអាចដើរបាន ឬក្រោយវះកាត់។ វាប្រើដើម្បីវាយតម្លៃជំងឺសួត ទីតាំងទុយោ/បំពង់វេជ្ជសាស្ត្រ (ET tube, CVP line) និងទំហំបេះដូង។",
+
+
+
+bodyPart:
+"ទ្រូង / សួត",
+
+
+
+projection:
+"Anteroposterior (AP) Portable",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺអង្គុយត្រង់ ឬអង្គុយផ្អែកលើគ្រែតាមដែលអាចធ្វើបាន (ដេកផ្ងារប្រសិនបើសភាពជំងឺតម្រូវ)។
+
+<br><br>
+
+• ដាក់បន្ទះ IR នៅពីក្រោយខ្នងអ្នកជំងឺ ដោយឱ្យគែមលើ IR ប្រហែល 4–5 ស.ម លើស្មា។
+
+<br><br>
+
+• រុញស្មាទៅមុខ និងបង្វិលដៃចូលក្នុង ដើម្បីបើកឆ្អឹងស្លាបប្រជៀវ (Scapulae) ចេញពីវាលសួត។
+
+<br><br>
+
+• ខ្សែបន្ទាត់ MSP ຢູ່ចំកណ្តាល និងកែងទៅនឹង IR។
+
+<br><br>
+
+• ថតនៅពេលអ្នកជំងឺដកដង្ហើមចូលពេញ (ឬនៅពេលដកដង្ហើមចូលអតិបរមារបស់ម៉ាស៊ីនជំនួយដង្ហើម)។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់ទ្រេតចុះក្រោមបន្តិច (caudad) ឱ្យកែងទៅនឹងឆ្អឹង Sternum (ដើម្បីកាត់បន្ថយការបាំងនៃឆ្អឹងដងកាំបិត)។
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ចូលចំកណ្តាល Sternum កម្រិត T7 (ប្រហែល 8–10 ស.ម ក្រោម Jugular Notch)។
+
+<br><br>
+
+• ធានាថា CR បាញ់កែងទៅនឹងប្លង់នៃបន្ទះ IR។
+
+<br><br>
+
+• កំណត់ព្រំដែនពន្លឺ 4 ទិសឱ្យគ្របដណ្តប់ទ្រូងទាំងមូល។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ បង្ហាញវាលសួតទាំងមូលចាប់ពី Apices រហូតដល់មុំ Costophrenic Angles។
+
+<br><br>
+
+✓ ការដកដង្ហើមចូលបានគ្រប់គ្រាន់ (ឃើញឆ្អឹងជំនីរខាងក្រោយ 8–10 លើដ្យាប្រាម)។
+
+<br><br>
+
+✓ ឆ្អឹងដងកាំបិត (Clavicles) នៅផ្នែកលើនៃវាលសួតលើឆ្អឹងជំនីរទី 3។
+
+<br><br>
+
+✓ គ្មានការបង្វិល៖ សន្លាក់ Sternoclavicular មានចម្ងាយស្មើគ្នាពីឆ្អឹងខ្នង។
+
+<br><br>
+
+✓ មើលឃើញច្បាស់លាស់នូវបំពង់ខ្យល់ (ET tube) ខ្សែសរសៃឈាម (CVP line) ឬឧបករណ៍វេជ្ជសាស្ត្រផ្សេងៗ ប្រសិនបើមាន។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

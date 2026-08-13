@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>TMJ Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="index.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+TMJ View
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Temporomandibular Joint Projection (Open & Closed Mouth)
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotofacial/tmj1.jpg">
+
+
+<img src="zphotofacial/tmj3.jpg">
+
+
+<img src="zphotofacial/tmj2.jpg">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The Temporomandibular Joint (TMJ) projection demonstrates the relationship between the mandibular condyle and the mandibular fossa in both closed-mouth and open-mouth positions to diagnose dislocations, joint dysfunction, and fractures.
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Temporomandibular Joint (TMJ)
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+Axiolateral / Oblique Lateral (Open & Closed)
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+18 × 24 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+70 - 75
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+12 - 20
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient seated erect or semi-prone with affected side against IR in lateral head position.
+
+<br><br>
+
+• Align Mid-sagittal Plane (MSP) parallel to IR plane; Interpupillary Line (IPL) perpendicular to IR.
+
+<br><br>
+
+• Perform initial projection with **Mouth Closed** (teeth together).
+
+<br><br>
+
+• Perform second projection with **Mouth Open** wide (unless contraindicated by trauma).
+
+<br><br>
+
+• Immobilize head during exposure to maintain true lateral position.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• CR directed 15° to 30° caudad (typically 25°–30° caudad for Modified Schüller Method).
+
+<br><br>
+
+• Center CR to enter approximately 7.5 cm (3 inches) superior to the upside EAM (External Auditory Meatus).
+
+<br><br>
+
+• Exit through downside TMJ (TMJ closest to the IR).
+
+<br><br>
+
+• Center IR to CR; collimate closely to include only the TMJ region.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Condyle demonstrated within mandibular fossa on Closed-Mouth image.
+
+<br><br>
+
+✓ Condyle moves inferiorly and anteriorly to the articular eminence on Open-Mouth image.
+
+<br><br>
+
+✓ Downside TMJ clearly demonstrated without superimposition of the opposite TMJ.
+
+<br><br>
+
+✓ Proper labeling of "Closed" and "Open" positions on radiographs.
+
+<br><br>
+
+✓ High contrast with sharp bony margins of mandibular fossa and condyle.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"TMJ View",
+
+subtitle:
+"Temporomandibular Joint Projection (Open & Closed Mouth)",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The Temporomandibular Joint (TMJ) projection demonstrates the relationship between the mandibular condyle and the mandibular fossa in both closed-mouth and open-mouth positions to diagnose dislocations, joint dysfunction, and fractures.",
+
+
+
+bodyPart:
+"Temporomandibular Joint (TMJ)",
+
+
+
+projection:
+"Axiolateral / Oblique Lateral (Open & Closed)",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient seated erect or semi-prone with affected side against IR in lateral head position.
+
+<br><br>
+
+• Align Mid-sagittal Plane (MSP) parallel to IR plane; Interpupillary Line (IPL) perpendicular to IR.
+
+<br><br>
+
+• Perform initial projection with **Mouth Closed** (teeth together).
+
+<br><br>
+
+• Perform second projection with **Mouth Open** wide (unless contraindicated by trauma).
+
+<br><br>
+
+• Immobilize head during exposure to maintain true lateral position.
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• CR directed 15° to 30° caudad (typically 25°–30° caudad for Modified Schüller Method).
+
+<br><br>
+
+• Center CR to enter approximately 7.5 cm (3 inches) superior to the upside EAM (External Auditory Meatus).
+
+<br><br>
+
+• Exit through downside TMJ (TMJ closest to the IR).
+
+<br><br>
+
+• Center IR to CR; collimate closely to include only the TMJ region.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Condyle demonstrated within mandibular fossa on Closed-Mouth image.
+
+<br><br>
+
+✓ Condyle moves inferiorly and anteriorly to the articular eminence on Open-Mouth image.
+
+<br><br>
+
+✓ Downside TMJ clearly demonstrated without superimposition of the opposite TMJ.
+
+<br><br>
+
+✓ Proper labeling of "Closed" and "Open" positions on radiographs.
+
+<br><br>
+
+✓ High contrast with sharp bony margins of mandibular fossa and condyle.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថត TMJ View",
+
+
+
+subtitle:
+"ការថតសន្លាក់ឆ្អឹងថ្គាមក្រោម (Temporomandibular Joint - បិទនិងបើកមាត់)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត TMJ View ប្រើប្រាស់ដើម្បីពិនិត្យមើលទំនាក់ទំនងរវាង Condyle និង Mandibular fossa ទាំងក្នុងស្ថានភាពបិទមាត់ និងបើកមាត់ ដើម្បីវិភាគរកការផ្លាស់ទីខុសកន្លែង (Dislocation) ការមិនធ្វើការរបស់សន្លាក់ ឬការបាក់ឆ្អឹង។",
+
+
+
+bodyPart:
+"សន្លាក់ឆ្អឹងថ្គាម (TMJ)",
+
+
+
+projection:
+"Axiolateral / Oblique Lateral (Open & Closed)",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺអង្គុយត្រង់ ឬដេកផ្អាប់ ដោយដាក់ចំហៀងក្បាលខាងដែលមានបញ្ហាផ្អែកលើ IR។
+
+<br><br>
+
+• ប្លង់ MSP (Mid-sagittal Plane) ត្រូវស្របនឹង IR ហើយខ្សែ IPL (Interpupillary Line) ត្រូវកែងទៅនឹង IR។
+
+<br><br>
+
+• ថតរូបភាពទី១ ក្នុងស្ថានភាព **បិទមាត់** (ធ្មេញខាំផ្អែបគ្នា)។
+
+<br><br>
+
+• ថតរូបភាពទី២ ក្នុងស្ថានភាព **បើកមាត់** ឲ្យធំ (លើកលែងតែមានការហាមឃាត់ដោយសារគ្រោះថ្នាក់)។
+
+<br><br>
+
+• រក្សាក្បាលឲ្យស្ងៀមក្នុងទិស Lateral ពិតប្រាកដក្នុងពេលថត។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់ទ្រេតចុះក្រោម 15° ទៅ 30° Caudad (ជាទូទៅ 25°–30° Caudad សម្រាប់វិធី Modified Schüller)។
+
+<br><br>
+
+• ចំណុចចូល CR គឺប្រហែល 7.5 cm (3 អ៊ីញ) ខាងលើរន្ធត្រចៀក EAM ខាងលើ។
+
+<br><br>
+
+• បាញ់ធ្លាយចេញចំសន្លាក់ TMJ ខាងក្រោម (ខាងដែលជាប់ IR)។
+
+<br><br>
+
+• តម្រឹមកណ្ដាល IR ឲ្យត្រូវនឹង CR ហើយកំណត់ព្រំដែនតូចល្មមជុំវិញតំបន់ TMJ។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ បង្ហាញ Condyle នៅក្នុង Mandibular fossa លើរូបភាពបិទមាត់ (Closed-Mouth)។
+
+<br><br>
+
+✓ Condyle ផ្លាស់ទីចុះក្រោម និងទៅមុខក្រោម Articular eminence លើរូបភាពបើកមាត់ (Open-Mouth)។
+
+<br><br>
+
+✓ បង្ហាញសន្លាក់ TMJ ខាងក្រោមបានច្បាស់ ដោយគ្មានការបាំងត្រួតពី TMJ ខាងលើ។
+
+<br><br>
+
+✓ មានដាក់ស្លាកសញ្ញា "Closed" និង "Open" ច្បាស់លាស់លើរូបភាព។
+
+<br><br>
+
+✓ រូបភាពមានកម្រិតខុសគ្នាច្បាស់ (Contrast) ឃើញគែមឆ្អឹង Fossa និង Condyle បានស្អាត។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

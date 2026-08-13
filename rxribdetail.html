@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Rib Detail Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="rxribdetail.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Rib Detail (Localized Rib View)
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Targeted High-Resolution Radiographic Projection for Specific Rib Lesions & Fractures
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotoribs/ribdetail1.jpg" alt="Rib Detail Positioning 1">
+
+
+<img src="zphotoribs/ribdetail2.jpg" alt="Rib Detail Positioning 2">
+
+
+<img src="zphotoribs/ribdetail3.jpg" alt="Rib Detail Positioning 3">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The localized rib detail projection utilizes tight collimation and optimal exposure techniques focused directly over the point of painful clinical interest. It evaluates subtle non-displaced cortical fractures, lytic/sclerotic bony lesions, or focal trauma in specific rib segments.
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Ribs / Localized Chest Wall
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+Localized AP / PA / Tangential Rib Detail
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+18 × 24 cm or 24 × 30 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+65 – 75
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+8 – 16
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient placed in erect or recumbent position (erect preferred for ribs above diaphragm; supine/prone for below diaphragm).
+
+<br><br>
+
+• Place patient's area of maximal tenderness directly in contact with or centered to the IR.
+
+<br><br>
+
+• Adjust body rotation (AP, PA, or oblique angle) so the specific rib segment lies parallel to the IR or in profile.
+
+<br><br>
+
+• Use radiopaque marker or BB marker over the exact point of patient's reported pain if indicated.
+
+<br><br>
+
+• Respiration: Full inspiration for upper ribs; full expiration for lower ribs. Suspended respiration during exposure.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• Central Ray perpendicular to Image Receptor (or angled tangentially if evaluating rib profile).
+
+<br><br>
+
+• Center Central Ray directly to the point of localized pain / interest.
+
+<br><br>
+
+• Center IR to CR.
+
+<br><br>
+
+• Tightly collimate to include only the localized area of interest (improves contrast and reduces scatter radiation).
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Targeted rib segment demonstrated in high contrast and maximum spatial resolution.
+
+<br><br>
+
+✓ Tight collimation margins clearly visible surrounding the localized region of interest.
+
+<br><br>
+
+✓ Sharp demonstration of trabecular pattern and subtle cortical margins without motion artifact.
+
+<br><br>
+
+✓ Anatomical side marker and pain localization marker (if used) clearly visible within collimated field.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Rib Detail (Localized Rib View)",
+
+subtitle:
+"Targeted High-Resolution Radiographic Projection for Specific Rib Lesions & Fractures",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The localized rib detail projection utilizes tight collimation and optimal exposure techniques focused directly over the point of painful clinical interest. It evaluates subtle non-displaced cortical fractures, lytic/sclerotic bony lesions, or focal trauma in specific rib segments.",
+
+
+
+bodyPart:
+"Ribs / Localized Chest Wall",
+
+
+
+projection:
+"Localized AP / PA / Tangential Rib Detail",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient placed in erect or recumbent position (erect preferred for ribs above diaphragm; supine/prone for below diaphragm).
+
+<br><br>
+
+• Place patient's area of maximal tenderness directly in contact with or centered to the IR.
+
+<br><br>
+
+• Adjust body rotation (AP, PA, or oblique angle) so the specific rib segment lies parallel to the IR or in profile.
+
+<br><br>
+
+• Use radiopaque marker or BB marker over the exact point of patient's reported pain if indicated.
+
+<br><br>
+
+• Respiration: Full inspiration for upper ribs; full expiration for lower ribs. Suspended respiration during exposure.
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• Central Ray perpendicular to Image Receptor (or angled tangentially if evaluating rib profile).
+
+<br><br>
+
+• Center Central Ray directly to the point of localized pain / interest.
+
+<br><br>
+
+• Center IR to CR.
+
+<br><br>
+
+• Tightly collimate to include only the localized area of interest (improves contrast and reduces scatter radiation).
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Targeted rib segment demonstrated in high contrast and maximum spatial resolution.
+
+<br><br>
+
+✓ Tight collimation margins clearly visible surrounding the localized region of interest.
+
+<br><br>
+
+✓ Sharp demonstration of trabecular pattern and subtle cortical margins without motion artifact.
+
+<br><br>
+
+✓ Anatomical side marker and pain localization marker (if used) clearly visible within collimated field.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតឆ្អឹងជំនីរ Rib Detail (ពង្រីកលម្អិតចំនុចជាក់លាក់)",
+
+
+
+subtitle:
+"ការថតកាំរស្មីឆ្អឹងជំនីរពង្រីកលម្អិតច្បាស់កម្រិតខ្ពស់សម្រាប់ពិនិត្យការបាក់ ឬជំងឺឆ្អឹងចំចំណុចឈឺ",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត Rib Detail ប្រើប្រាស់ការបង្រួមពន្លឺតូច (tight collimation) និងបច្ចេកទេសកាំរស្មីច្បាស់លាស់ ដោយតម្រង់ចំចំណុចដែលមានការឈឺចាប់។ វាប្រើដើម្បីពិនិត្យមើលការបាក់ឆ្អឹងជំនីរតូចៗដែលផ្លាស់ទីតិចតួច ការប្រេះឆ្អឹង ឬដំបៅឆ្អឹងក្នុងផ្នែកណាមួយនៃឆ្អឹងជំនីរ។",
+
+
+
+bodyPart:
+"ឆ្អឹងជំនីរ / ជញ្ជាំងទ្រូង",
+
+
+
+projection:
+"Localized AP / PA / Tangential Rib Detail",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺឈរ ឬដេក (ឈរល្អសម្រាប់ឆ្អឹងជំនីរលើដ្យាប្រាម; ដេកសម្រាប់ឆ្អឹងជំនីរក្រោមដ្យាប្រាម)។
+
+<br><br>
+
+• ដាក់ចំណុចដែលអ្នកជំងឺឈឺខ្លាំងបំផុតឱ្យនៅជិត ឬចំកណ្តាលនៃបន្ទះ IR។
+
+<br><br>
+
+• រៀបចំការបង្វិលខ្លួន (AP, PA, ឬ Oblique) ដើម្បីឱ្យផ្នែកឆ្អឹងជំនីរដែលត្រូវពិនិត្យស្ថិតនៅស្របនឹង IR ឬឃើញផ្នែកគែមច្បាស់។
+
+<br><br>
+
+• អាចប្រើសញ្ញាសម្គាល់ដែក (BB marker) បិទចំចំណុចឈឺប្រសិនបើចាំបាច់។
+
+<br><br>
+
+• ការដកដង្ហើម៖ ដកដង្ហើមចូលពេញសម្រាប់ផ្នែកលើ; ដកដង្ហើមចេញអស់សម្រាប់ផ្នែកក្រោម ហើយទប់ដង្ហើមពេលថត។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់កែងទៅ IR (ឬបាញ់ទ្រេតប៉ះ tangential ប្រសិនបើចង់មើលគែមឆ្អឹង)។
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ចូលចំចំណុចដែលឈឺ ឬតំបន់ត្រូវពិនិត្យ។
+
+<br><br>
+
+• រៀបចំកណ្តាល IR ឱ្យត្រូវនឹង CR។
+
+<br><br>
+
+• បង្រួមព្រំដែនពន្លឺឱ្យតូចល្មមចំតំបន់ត្រូវពិនិត្យ (ដើម្បីបង្កើនភាពច្បាស់ និងកាត់បន្ថយកាំរស្មីខ្ចាត់ខ្ចាយ)។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ បង្ហាញផ្នែកឆ្អឹងជំនីរដែលចង់បានដោយមានភាពច្បាស់ និងកម្រិត Resolution ខ្ពស់។
+
+<br><br>
+
+✓ ឃើញគែមបង្រួមពន្លឺ (Collimation) ច្បាស់ជុំវិញតំបន់ត្រូវពិនិត្យ។
+
+<br><br>
+
+✓ បង្ហាញទ្រង់ទ្រាយឆ្អឹងខាងក្នុង (trabecular) និងគែមឆ្អឹងខាងក្រៅបានច្បាស់ គ្មានការព្រាល។
+
+<br><br>
+
+✓ ឃើញសញ្ញាសម្គាល់ខាង (L/R) និងសញ្ញាចំណុចឈឺ (ប្រសិនបើមានប្រើ) ច្បាស់ក្នុងរូបភាព។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

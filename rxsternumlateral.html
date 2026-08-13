@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Sternum Lateral Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="rxsternumlateral.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Sternum Lateral Position
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Lateral Radiographic Projection for Sternal Fractures, Displacements & Pathologies
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotosternum/sternumlateral1.jpg" alt="Sternum Lateral Positioning 1">
+
+
+<img src="zphotosternum/sternumlateral2.jpg" alt="Sternum Lateral Positioning 2">
+
+
+<img src="zphotosternum/sternumlateral3.jpg" alt="Sternum Lateral Positioning 3">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The Lateral Sternum projection provides a true side profile view of the sternum to demonstrate anterior or posterior displacement of fractures, sternal depressed lesions, and localized pathology free of rib and cardiac superimposition.
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Sternum / Anterior Thoracic Wall
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+Lateral Projection
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+24 × 30 cm (Lengthwise)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+180 cm (72 inches)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+75 – 85
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+20 – 35
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient positioned standing or sitting upright facing laterally against vertical bucky/grid (erect position preferred to prevent sag).
+
+<br><br>
+
+• Place patient's lateral chest wall in contact with vertical IR.
+
+<br><br>
+
+• Instruct patient to draw shoulders and arms back fully behind body, clasping hands behind lower back to clear humeri from sternum.
+
+<br><br>
+
+• Elevate chin slightly and adjust chest so sternum is perpendicular to IR plane.
+
+<br><br>
+
+• Respiration: Deep inspiration (draws lungs full of air and projects sternum anteriorly away from cardiac silhouette). Suspended inspiration during exposure.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• Central Ray horizontal and perpendicular to Image Receptor.
+
+<br><br>
+
+• Center Central Ray to mid-sternum (midway between jugular notch and xiphoid process, approximately level of T7).
+
+<br><br>
+
+• Center IR to CR (top of IR located ~4 cm above jugular notch).
+
+<br><br>
+
+• Collimate tightly to anterior-posterior borders of the sternum.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Entire sternum (manubrium, sternal body, and xiphoid process) clearly demonstrated in true profile.
+
+<br><br>
+
+✓ No overlap or superimposition of the sternum by soft tissue of shoulders or humeri.
+
+<br><br>
+
+✓ Sternum projected anteriorly away from ribs and heart.
+
+<br><br>
+
+✓ Sharp detail of cortical borders and absence of patient motion blur.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Sternum Lateral Position",
+
+subtitle:
+"Lateral Radiographic Projection for Sternal Fractures, Displacements & Pathologies",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The Lateral Sternum projection provides a true side profile view of the sternum to demonstrate anterior or posterior displacement of fractures, sternal depressed lesions, and localized pathology free of rib and cardiac superimposition.",
+
+
+
+bodyPart:
+"Sternum / Anterior Thoracic Wall",
+
+
+
+projection:
+"Lateral Projection",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient positioned standing or sitting upright facing laterally against vertical bucky/grid (erect position preferred to prevent sag).
+
+<br><br>
+
+• Place patient's lateral chest wall in contact with vertical IR.
+
+<br><br>
+
+• Instruct patient to draw shoulders and arms back fully behind body, clasping hands behind lower back to clear humeri from sternum.
+
+<br><br>
+
+• Elevate chin slightly and adjust chest so sternum is perpendicular to IR plane.
+
+<br><br>
+
+• Respiration: Deep inspiration (draws lungs full of air and projects sternum anteriorly away from cardiac silhouette). Suspended inspiration during exposure.
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• Central Ray horizontal and perpendicular to Image Receptor.
+
+<br><br>
+
+• Center Central Ray to mid-sternum (midway between jugular notch and xiphoid process, approximately level of T7).
+
+<br><br>
+
+• Center IR to CR (top of IR located ~4 cm above jugular notch).
+
+<br><br>
+
+• Collimate tightly to anterior-posterior borders of the sternum.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Entire sternum (manubrium, sternal body, and xiphoid process) clearly demonstrated in true profile.
+
+<br><br>
+
+✓ No overlap or superimposition of the sternum by soft tissue of shoulders or humeri.
+
+<br><br>
+
+✓ Sternum projected anteriorly away from ribs and heart.
+
+<br><br>
+
+✓ Sharp detail of cortical borders and absence of patient motion blur.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតឆ្អឹងទ្រូង Sternum Lateral",
+
+
+
+subtitle:
+"ការថតកាំរស្មីឆ្អឹងទ្រូងទិសខាង (Lateral) សម្រាប់ពិនិត្យការបាក់ ការរងស្រុត និងជំងឺឆ្អឹងទ្រូង",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត Sternum Lateral ផ្តល់នូវរូបភាពចំហៀងពិតប្រាកដនៃឆ្អឹងទ្រូង ដើម្បីបង្ហាញពីការបាក់លេចចេញទៅមុខ ឬក្រោយ ការស្រុតចុះនៃឆ្អឹងទ្រូង និងជំងឺផ្សេងៗដោយចៀសផុតពីការបាំងជាន់នៃឆ្អឹងជំនីរ និងបេះដូង។",
+
+
+
+bodyPart:
+"ឆ្អឹងទ្រូង (Sternum)",
+
+
+
+projection:
+"Lateral Projection",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺឈរ ឬអង្គុយត្រង់ខ្លួន បែរចំហៀងទៅរកបន្ទះ IR បញ្ឈរ (ឈរត្រង់ល្អដើម្បីកុំឱ្យឆ្អឹងកោង)។
+
+<br><br>
+
+• ដាក់ចំហៀងទ្រូងរបស់អ្នកជំងឺឱ្យប៉ះផ្ទាល់នឹងបន្ទះ IR។
+
+<br><br>
+
+• ណែនាំអ្នកជំងឺឱ្យទាញស្មា និងដៃទាំងពីរទៅក្រោយឱ្យអស់ ហើយប្រកៀកដៃនៅពីក្រោយខ្នងផ្នែកក្រោម ដើម្បីគេចឆ្អឹងដៃកុំឱ្យបាំងឆ្អឹងទ្រូង។
+
+<br><br>
+
+• ងើបចង្កាបន្តិច និងតម្រឹមក្បាលពោះ/ទ្រូងឱ្យឆ្អឹងទ្រូងស្ថិតនៅក្នុងប្លង់កែងត្រឹមត្រូវ។
+
+<br><br>
+
+• ការដកដង្ហើម៖ ដកដង្ហើមចូលឱ្យពេញ (ដើម្បីឱ្យសួតពេញដោយខ្យល់ រុញឆ្អឹងទ្រូងមកមុខផុតពីបេះដូង) រួចទប់ដង្ហើមពេលថត។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់ផ្ដេក និងកែងទៅ IR (ប្រើចម្ងាយ SID 180 cm ដើមបីកាត់បន្ថយការពង្រីករូបភាព)។
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ចូលចំកណ្តាល Sternum (ចន្លោះកណ្តាល Jugular Notch និង Xiphoid process កម្រិត T7)។
+
+<br><br>
+
+• រៀបចំកណ្តាល IR ឱ្យត្រូវនឹង CR (គែមលើ IR ប្រហែល 4 ស.ម លើ Jugular Notch)។
+
+<br><br>
+
+• បង្រួមព្រំដែនពន្លឺឱ្យតូចចង្អៀត តាមបណ្ដោយឆ្អឹងទ្រូង។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ បង្ហាញឆ្អឹងទ្រូងទាំងមូល (Manubrium, Sternal body, និង Xiphoid process) ច្បាស់ក្នុងទិសចំហៀងពិត (Profile)។
+
+<br><br>
+
+✓ គ្មានការបាំងជាន់លើឆ្អឹងទ្រូងពីសាច់ដុំស្មា ឬឆ្អឹងដៃ (Humeri) ឡើយ។
+
+<br><br>
+
+✓ ឆ្អឹងទ្រូងត្រូវលេចចេញមកមុខផុតពីឆ្អឹងជំនីរ និងរូបភាពបេះដូង។
+
+<br><br>
+
+✓ ឃើញគែមឆ្អឹង (Cortical borders) ច្បាស់ល្អ និងគ្មានការព្រាលដោយសារការកម្រើក។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

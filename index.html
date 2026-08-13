@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Radiographic Positioning System</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+background:#f1f5f9;
+color:#1e293b;
+}
+
+
+/* HEADER */
+
+header{
+
+background:#0f172a;
+color:white;
+
+padding:20px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+position:sticky;
+top:0;
+z-index:10;
+
+}
+
+
+.logo{
+
+font-size:26px;
+font-weight:bold;
+
+}
+
+
+
+.search-box input{
+
+width:300px;
+
+padding:12px 20px;
+
+border-radius:30px;
+
+border:none;
+
+outline:none;
+
+font-size:16px;
+
+}
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+text-align:center;
+
+padding:40px 20px;
+
+}
+
+
+.hero h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+margin-bottom:15px;
+
+}
+
+
+.hero p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+
+/* CONTAINER */
+
+
+.container{
+
+padding:30px;
+
+max-width:1400px;
+
+margin:auto;
+
+}
+
+
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+
+
+/* CARD */
+
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+cursor:pointer;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-7px);
+
+}
+
+
+
+
+.icon{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#2563eb;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:32px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.card h2{
+
+font-size:22px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.card p{
+
+color:#64748b;
+
+line-height:1.5;
+
+}
+
+
+
+
+.btn{
+
+margin-top:15px;
+
+display:inline-block;
+
+padding:12px 22px;
+
+background:#2563eb;
+
+color:white;
+
+border-radius:10px;
+
+font-weight:bold;
+
+}
+
+
+
+
+footer{
+
+margin-top:50px;
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:25px;
+
+}
+
+
+
+/* PHONE RESPONSIVE */
+
+
+@media(max-width:700px){
+
+
+header{
+
+flex-direction:column;
+
+gap:15px;
+
+padding:20px;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+text-align:center;
+
+}
+
+
+
+.search-box{
+
+width:100%;
+
+}
+
+
+.search-box input{
+
+width:100%;
+
+}
+
+
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+
+
+.hero p{
+
+font-size:16px;
+
+}
+
+
+
+.container{
+
+padding:15px;
+
+}
+
+
+
+.grid{
+
+grid-template-columns:
+
+repeat(1,1fr);
+
+gap:20px;
+
+}
+
+
+
+.card{
+
+padding:22px;
+
+}
+
+
+
+.icon{
+
+width:60px;
+
+height:60px;
+
+font-size:28px;
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo">
+
+🩻 Radiographic Positioning System
+
+</div>
+
+
+
+<div class="search-box">
+
+<input 
+type="text"
+placeholder="Search position..."
+>
+
+</div>
+
+
+</header>
+
+
+
+
+<section class="hero">
+
+
+<h1>
+
+Professional Radiographic Position Database
+
+</h1>
+
+
+<p>
+
+Select anatomical region to explore positioning techniques
+
+</p>
+
+
+</section>
+
+
+
+
+<section class="container">
+
+
+<div class="grid">
+
+
+
+<div class="card"
+onclick="openCategory('Head')">
+
+<div class="icon">
+🧠
+</div>
+
+
+<h2>
+Head
+</h2>
+
+
+<p>
+Skull and facial bone radiographic positions.
+</p>
+
+
+<div class="btn">
+View 15 Positions
+</div>
+
+</div>
+
+
+
+
+
+<div class="card"
+onclick="openCategory('Chest')">
+
+<div class="icon">
+🫁
+</div>
+
+
+<h2>
+Chest
+</h2>
+
+
+<p>
+Chest radiographic examinations.
+</p>
+
+
+<div class="btn">
+View 15 Positions
+</div>
+
+</div>
+
+
+
+
+
+<div class="card"
+onclick="openCategory('Vertebral')">
+
+<div class="icon">
+🦴
+</div>
+
+
+<h2>
+Vertebral Column
+</h2>
+
+
+<p>
+Cervical, thoracic and lumbar spine.
+</p>
+
+
+<div class="btn">
+View 15 Positions
+</div>
+
+</div>
+
+
+
+
+
+<div class="card"
+onclick="openCategory('Pelvis')">
+
+<div class="icon">
+🦵
+</div>
+
+
+<h2>
+Pelvis
+</h2>
+
+
+<p>
+Pelvis and hip positioning.
+</p>
+
+
+<div class="btn">
+View 15 Positions
+</div>
+
+</div>
+
+
+
+
+
+<div class="card"
+onclick="openCategory('Upper Extremity')">
+
+<div class="icon">
+💪
+</div>
+
+
+<h2>
+Upper Extremity
+</h2>
+
+
+<p>
+Hand, wrist, elbow and shoulder.
+</p>
+
+
+<div class="btn">
+View 15 Positions
+</div>
+
+</div>
+
+
+
+
+
+<div class="card"
+onclick="openCategory('Lower Extremity')">
+
+<div class="icon">
+🦶
+</div>
+
+
+<h2>
+Lower Extremity
+</h2>
+
+
+<p>
+Foot, ankle, knee and leg.
+</p>
+
+
+<div class="btn">
+View 15 Positions
+</div>
+
+</div>
+
+
+
+
+<div class="card"
+onclick="openPage('xraymachinebackytable.html')">
+
+<div class="icon">
+🛏️
+</div>
+
+
+<h2>
+Bucky Table Simulation
+</h2>
+
+
+<p>
+Interactive recumbent table setup and Bucky tray controls.
+</p>
+
+
+<div class="btn">
+Open Simulator
+</div>
+
+</div>
+
+
+
+
+<div class="card"
+onclick="openPage('xraymachinebackystand.html')">
+
+<div class="icon">
+📏
+</div>
+
+
+<h2>
+Bucky Stand Simulation
+</h2>
+
+
+<p>
+Interactive vertical Bucky stand positioning & grid alignment.
+</p>
+
+
+<div class="btn">
+Open Simulator
+</div>
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+Radiographic Positioning System © 2026
+
+</footer>
+
+
+<script>
+
+// JavaScript database will be added in Part 2
+
+</script>
+<script>
+
+
+const pages = {
+
+
+"Head":{
+
+"AP Skull":"rxheadap.html",
+"PA Skull":"rxheadpa.html",
+"Lateral Skull":"rxheadlateral.html",
+"Waters View":"rxheadwaters.html",
+"Caldwell View":"rxheadcaldwell.html",
+"Towne View":"rxheadtowne.html",
+"Submentovertex (SMV)":"rxheadsmv.html",
+"Reverse Towne":"rxheadreversetowne.html",
+"Facial Bones AP":"rxheadfacialap.html",
+"Facial Bones Lateral":"rxheadfaciallateral.html",
+"Orbital Floor View":"rxheadorbit.html",
+"Nasal Bone":"rxheadnasal.html",
+"Mandible AP":"rxheadmandibleap.html",
+"Mandible Oblique":"rxheadmandibleoblique.html",
+"TMJ View":"rxheadtmj.html"
+
+},
+
+
+
+"Chest":{
+
+"PA Chest":"rxchestpa.html",
+"AP Chest":"rxchestap.html",
+"Lateral Chest":"rxchestlateral.html",
+"Chest Oblique":"rxchestoblique.html",
+"Apical Lordotic":"rxchestlordotic.html",
+"Decubitus Chest":"rxchestdecubitus.html",
+"Expiration Chest":"rxchestexpiration.html",
+"Inspiration Chest":"rxchestinspiration.html",
+"Portable Chest":"rxchestportable.html",
+"Rib AP":"rxribap.html",
+"Rib Oblique":"rxriboblique.html",
+"Rib Detail":"rxribdetail.html",
+"Sternum PA":"rxsternumpa.html",
+"Sternum Lateral":"rxsternumlateral.html",
+"Thoracic Cage":"rxthoraciccage.html"
+
+},
+
+
+
+
+"Vertebral":{
+
+"AP Cervical Spine":"rxvertebralapcervical.html",
+"Lateral Cervical Spine":"rxvertebrallateralcervical.html",
+"Open Mouth Odontoid":"rxvertebralodontoid.html",
+"Oblique Cervical Spine":"rxvertebralobliquecervical.html",
+"Swimmer View":"rxvertebralswimmer.html",
+"AP Thoracic Spine":"rxvertebralapthoracic.html",
+"Lateral Thoracic Spine":"rxvertebrallateralthoracic.html",
+"AP Lumbar Spine":"rxvertebralaplumbar.html",
+"Lateral Lumbar Spine":"rxvertebrallaterallumbar.html",
+"Oblique Lumbar Spine":"rxvertebralobliquelumbar.html",
+"L5-S1 Spot":"rxvertebrall5s1.html",
+"Sacrum AP":"rxvertebralsacrumap.html",
+"Sacrum Lateral":"rxvertebralsacrumlateral.html",
+"Coccyx AP":"rxvertebralcoccyxap.html",
+"Coccyx Lateral":"rxvertebralcoccyxlateral.html"
+
+},
+
+
+
+
+"Pelvis":{
+
+"AP Pelvis":"rxpelvisap.html",
+"AP Hip":"rxpelviship.html",
+"Frog Leg Hip":"rxpelvisfrogleg.html",
+"Judet View":"rxpelvisjudet.html",
+"Pelvic Inlet":"rxpelvisinlet.html",
+"Pelvic Outlet":"rxpelvisoutlet.html",
+"Cross Table Hip":"rxpelviscrosstable.html",
+"Trauma Hip":"rxpelvistrauma.html",
+"SI Joint AP":"rxpelvissiap.html",
+"SI Joint Oblique":"rxpelvissioblique.html",
+"Acetabulum AP":"rxpelvisacetabulumap.html",
+"Acetabulum Oblique":"rxpelvisacetabulumoblique.html",
+"Pelvic Ring":"rxpelvisring.html",
+"Pubic Bone":"rxpelvispubic.html",
+"Ischium View":"rxpelvisischium.html"
+
+},
+
+
+
+
+"Upper Extremity":{
+
+"Hand":"rxupperhand.html",
+"Wrist":"rxupperwrist.html",
+"Forearm":"rxupperforearm.html",
+"Elbow":"rxupperelbow.html",
+"Humerus":"rxupperhumerus.html",
+"Shoulder":"rxuppershoulder.html",
+"Finger":"rxupperfinger.html",
+"Thumb":"rxupperthumb.html",
+"Scaphoid View":"rxupperscaphoid.html",
+"Carpal Tunnel":"rxuppercarpal.html",
+"Clavicle AP":"rxupperclavicleap.html",
+"Clavicle Axial":"rxupperclavicleaxial.html",
+"AC Joint":"rxupperacjoint.html",
+"Scapula":"rxupperscapula.html",
+"Upper Arm Trauma":"rxuppertrauma.html"
+
+},
+
+
+
+
+
+"Lower Extremity":{
+
+"Foot":"rxlowerfoot.html",
+"Ankle":"rxlowerankle.html",
+"Tibia Fibula":"rxlowertibia.html",
+"Knee":"rxlowerknee.html",
+"Femur":"rxlowerfemur.html",
+"Calcaneus":"rxlowercalcaneus.html",
+"Toe":"rxlowertoe.html",
+"Patella":"rxlowerpatella.html",
+"Standing Knee":"rxlowerstandingknee.html",
+"Tibial Plateau":"rxlowertibialplateau.html",
+"Ankle Mortise":"rxloweranklemortise.html",
+"Leg Trauma":"rxlowerlegtrauma.html",
+"Foot Oblique":"rxlowerfootoblique.html",
+"Foot Lateral":"rxlowerfootlateral.html",
+"Achilles View":"rxlowerachilles.html"
+
+}
+
+
+};
+
+
+
+
+
+function openCategory(category){
+
+
+document.body.innerHTML=`
+
+
+<header>
+
+<div class="logo">
+
+🩻 ${category} Positions
+
+</div>
+
+</header>
+
+
+
+
+<section class="hero">
+
+<h1>
+
+${category} Radiographic Positions
+
+</h1>
+
+</section>
+
+
+
+
+
+<section class="container">
+
+
+<button class="btn"
+
+onclick="location.reload()">
+
+← Back
+
+</button>
+
+
+
+<br><br>
+
+
+
+<div class="grid">
+
+
+${Object.keys(pages[category]).map(name=>`
+
+
+<div class="card"
+
+onclick="openPage('${pages[category][name]}')">
+
+
+<div class="icon">
+
+🩻
+
+</div>
+
+
+
+<h2>
+
+${name}
+
+</h2>
+
+
+
+<p>
+
+Open detailed technique
+
+</p>
+
+
+
+<div class="btn">
+
+View
+
+</div>
+
+
+</div>
+
+
+`).join("")}
+
+
+
+</div>
+
+
+</section>
+
+
+`;
+
+}
+
+
+
+
+function openPage(page){
+
+window.location.href = page;
+
+}
+
+
+
+</script>
+
+</body>
+
+</html>

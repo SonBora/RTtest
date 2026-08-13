@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Thoracic Cage Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="rxthoraciccage.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Thoracic Cage Survey
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Comprehensive Radiographic Evaluation of the Ribs, Sternum & Thoracic Skeleton
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotothoracic/thoraciccage1.jpg" alt="Thoracic Cage Positioning 1">
+
+
+<img src="zphotothoracic/thoraciccage2.jpg" alt="Thoracic Cage Positioning 2">
+
+
+<img src="zphotothoracic/thoraciccage3.jpg" alt="Thoracic Cage Positioning 3">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The general Thoracic Cage survey encompasses combined projections of the ribs, sternum, and thoracic articulation to assess extensive blunt trauma, osseous metastasis, metabolic bone disorders, or congenital chest wall deformities.
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Thoracic Cage / Bony Thorax
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+AP / PA Thoracic Survey Routine
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+35 × 43 cm (Lengthwise)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 cm – 180 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+70 – 85
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+12 – 25
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient positioned erect facing vertical Bucky (or supine if trauma prevents standing).
+
+<br><br>
+
+• Center mid-sagittal plane (MSP) or affected hemi-thorax to grid midline.
+
+<br><br>
+
+• Adjust shoulders in same transverse plane and roll shoulders forward to clear scapulae.
+
+<br><br>
+
+• Place top of IR approximately 4 cm above shoulder level.
+
+<br><br>
+
+• Respiration: Full inspiration for upper thoracic cage evaluation; full expiration for lower thoracic cage. Suspended during exposure.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• Central Ray perpendicular to Image Receptor.
+
+<br><br>
+
+• Center Central Ray to level of T7 (approx. 18–20 cm below vertebra prominens / mid-sternum).
+
+<br><br>
+
+• Center IR to CR.
+
+<br><br>
+
+• Collimate to cover entire thoracic cage margins including lateral rib borders and sternoclavicular joints.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Full bony thorax visualized including bilateral rib structures, sternum, and costal cartilages.
+
+<br><br>
+
+✓ No rotation: distance from vertebral column to lateral rib borders equal bilaterally.
+
+<br><br>
+
+✓ Optimal density and contrast demonstrating bony trabeculae and cortical margins clearly.
+
+<br><br>
+
+✓ Absence of motion blurring on ribs and thoracic articulation.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Thoracic Cage Survey",
+
+subtitle:
+"Comprehensive Radiographic Evaluation of the Ribs, Sternum & Thoracic Skeleton",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The general Thoracic Cage survey encompasses combined projections of the ribs, sternum, and thoracic articulation to assess extensive blunt trauma, osseous metastasis, metabolic bone disorders, or congenital chest wall deformities.",
+
+
+
+bodyPart:
+"Thoracic Cage / Bony Thorax",
+
+
+
+projection:
+"AP / PA Thoracic Survey Routine",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient positioned erect facing vertical Bucky (or supine if trauma prevents standing).
+
+<br><br>
+
+• Center mid-sagittal plane (MSP) or affected hemi-thorax to grid midline.
+
+<br><br>
+
+• Adjust shoulders in same transverse plane and roll shoulders forward to clear scapulae.
+
+<br><br>
+
+• Place top of IR approximately 4 cm above shoulder level.
+
+<br><br>
+
+• Respiration: Full inspiration for upper thoracic cage evaluation; full expiration for lower thoracic cage. Suspended during exposure.
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• Central Ray perpendicular to Image Receptor.
+
+<br><br>
+
+• Center Central Ray to level of T7 (approx. 18–20 cm below vertebra prominens / mid-sternum).
+
+<br><br>
+
+• Center IR to CR.
+
+<br><br>
+
+• Collimate to cover entire thoracic cage margins including lateral rib borders and sternoclavicular joints.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Full bony thorax visualized including bilateral rib structures, sternum, and costal cartilages.
+
+<br><br>
+
+✓ No rotation: distance from vertebral column to lateral rib borders equal bilaterally.
+
+<br><br>
+
+✓ Optimal density and contrast demonstrating bony trabeculae and cortical margins clearly.
+
+<br><br>
+
+✓ Absence of motion blurring on ribs and thoracic articulation.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតទ្រុងឆ្អឹងទ្រូង Thoracic Cage Survey",
+
+
+
+subtitle:
+"ការថតកាំរស្មីពិនិត្យទ្រុងឆ្អឹងទ្រូងទាំងមូល (ឆ្អឹងជំនីរ ឆ្អឹងទ្រូង និងឆ្អឹងខ្នងទ្រូង)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថតទ្រុងឆ្អឹងទ្រូង Thoracic Cage រួមបញ្ចូលការថតឆ្អឹងជំនីរ ឆ្អឹងទ្រូង និងសន្លាក់ទ្រូងទាំងមូល ដើម្បីវាយតម្លៃការប៉ះទង្គិចទូទៅ ការរាលដាលនៃជំងឺមហារីកឆ្អឹង ជំងឺបាត់បង់ជាតិកាល់ស្យូម ឬទម្រង់ឆ្អឹងទ្រូងមិនប្រក្រតីពីកំណើត។",
+
+
+
+bodyPart:
+"ទ្រុងឆ្អឹងទ្រូង (Bony Thorax)",
+
+
+
+projection:
+"AP / PA Thoracic Survey Routine",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺឈរត្រង់facing IR បញ្ឈរ (ឬដេកផ្ងារប្រសិនបើមានរបួសធ្ងន់ធ្ងរមិនអាចឈរបាន)។
+
+<br><br>
+
+• តម្រឹមកណ្តាលរាងកាយ (MSP) ឬចំហៀងទ្រូងដែលមានបញ្ហាឱ្យចំកណ្តាលតុថត។
+
+<br><br>
+
+• តម្រឹមស្មាឱ្យស្មើគ្នា រួចរុញស្មាទៅមុខដើម្បីបើកឆ្អឹងស្លាបប្រជៀវចេញ។
+
+<br><br>
+
+• ដាក់គែមលើនៃបន្ទះ IR ប្រហែល 4 ស.ម លើស្មា។
+
+<br><br>
+
+• ការដកដង្ហើម៖ ដកដង្ហើមចូលពេញសម្រាប់ផ្នែកលើ ឬដកដង្ហើមចេញអស់សម្រាប់ផ្នែកក្រោម រួចទប់ដង្ហើមពេលថត។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់កែងទៅ IR।
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ចូលកម្រិត T7 (ប្រហែល 18–20 ស.ម ក្រោម Vertebra Prominens / ចំកណ្តាល Sternum)។
+
+<br><br>
+
+• រៀបចំកណ្តាល IR ឱ្យត្រូវនឹង CR។
+
+<br><br>
+
+• កំណត់ព្រំដែនពន្លឺឱ្យគ្របដណ្តប់ទ្រុងឆ្អឹងទ្រូងទាំងមូល រួមទាំងគែមឆ្អឹងជំនីរខាង និងសន្លាក់ Sternoclavicular។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ បង្ហាញទ្រុងឆ្អឹងទ្រូងទាំងមូល រួមមានឆ្អឹងជំនីរទាំងសងខាង ឆ្អឹងទ្រូង និងឆ្អឹងខ្ចីឆ្អឹងជំនីរ។
+
+<br><br>
+
+✓ គ្មានការបង្វិល៖ ចម្ងាយពីឆ្អឹងខ្នងទៅគែមឆ្អឹងជំនីរខាងស្មើគ្នាទាំងសងខាង។
+
+<br><br>
+
+✓ កម្រិតកាំរស្មី និងភាពច្បាស់ល្អដែលបង្ហាញសរសៃឆ្អឹង (trabeculae) និងគែមឆ្អឹងបានច្បាស់។
+
+<br><br>
+
+✓ គ្មានការព្រាលដោយសារការកម្រើកលើឆ្អឹងជំនីរ និងសន្លាក់ទ្រូង។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

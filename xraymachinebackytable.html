@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>X-Ray Tube Alignment Simulator - Bucky Table</title>
+  <style>
+    * { 
+      box-sizing: border-box; 
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: #121418;
+      color: #e1e4e8;
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      height: 100dvh; /* Dynamic viewport height for mobile browsers */
+      overflow: hidden;
+    }
+    
+    #sim-container {
+      flex: 1;
+      position: relative;
+      background: #1e222b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-right: 2px solid #2d333f;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    svg { 
+      width: 100%; 
+      height: 100%; 
+      max-height: 100%;
+    }
+
+    #console-container {
+      width: 380px;
+      background: #181b20;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.5);
+      z-index: 10;
+      flex-shrink: 0;
+    }
+
+    h2 { margin: 0 0 2px 0; font-size: 17px; color: #00adb5; text-transform: uppercase; }
+    .sub-title { font-size: 11px; color: #8b949e; margin-bottom: 4px; }
+
+    .control-card {
+      background: #22272e;
+      border: 1px solid #373e47;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    
+    .control-card label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #adbac7;
+    }
+
+    input[type=range] { 
+      width: 100%; 
+      accent-color: #00adb5; 
+      cursor: pointer;
+      height: 28px; /* Larger touch area for range thumbs */
+    }
+
+    .btn-group { display: flex; gap: 6px; }
+    
+    .btn {
+      flex: 1;
+      min-height: 40px; /* Touch target enhancement */
+      padding: 8px;
+      background: #2d333f;
+      border: 1px solid #444c56;
+      color: #adbac7;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 11px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .btn.active {
+      background: #00adb5;
+      color: #fff;
+      border-color: #00adb5;
+      box-shadow: 0 0 8px rgba(0, 173, 181, 0.4);
+    }
+
+    #exposeBtn {
+      background: #d9383a;
+      color: white;
+      border: none;
+      min-height: 50px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 8px;
+      user-select: none;
+      -webkit-user-select: none;
+      width: 100%;
+    }
+    
+    #exposeBtn.exposing { background: #ffaa00; color: #000; }
+
+    #hud-readout {
+      position: absolute;
+      top: 10px; 
+      left: 10px;
+      background: rgba(24, 27, 32, 0.9);
+      border: 1px solid #373e47;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 11px;
+      pointer-events: none;
+      line-height: 1.4;
+      backdrop-filter: blur(4px);
+      z-index: 5;
+    }
+    
+    .status-ready { color: #2ecc71; font-weight: bold; }
+    .status-warn { color: #e74c3c; font-weight: bold; }
+
+    #resultModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      height: 100dvh;
+      background: rgba(0,0,0,0.85);
+      z-index: 100;
+      align-items: center; 
+      justify-content: center;
+      padding: 15px;
+    }
+    
+    .modal-content {
+      background: #181b20;
+      border: 2px solid #00adb5;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .modal-content img { 
+      max-width: 100%; 
+      max-height: 50vh; 
+      border-radius: 8px; 
+      margin: 12px 0; 
+      object-fit: contain;
+    }
+    
+    .close-btn { 
+      background: #00adb5; 
+      color: white; 
+      border: none; 
+      min-height: 44px;
+      width: 100%;
+      padding: 8px 20px; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      font-weight: bold;
+    }
+
+    /* Mobile Responsive Breakpoint */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      #sim-container {
+        flex: 0 0 40vh; /* Takes 40% of viewport on mobile */
+        border-right: none;
+        border-bottom: 2px solid #2d333f;
+      }
+
+      #console-container {
+        width: 100%;
+        flex: 1; /* Occupies remaining height */
+        padding: 14px;
+      }
+
+      #hud-readout {
+        font-size: 10px;
+        padding: 6px 10px;
+        top: 6px;
+        left: 6px;
+      }
+
+      .btn {
+        font-size: 10px;
+        padding: 6px 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sim-container">
+    <div id="hud-readout">
+      <div><strong>TUBE ALIGNMENT SIMULATOR</strong></div>
+      <div>Projection: <span id="orientReadout" style="color:#00adb5;">PA</span></div>
+      <div>Tube Angle: <span id="angleReadout" style="color:#ffaa00;">0° (Perpendicular)</span></div>
+      <div>Field Size: <span id="fieldReadout" style="color:#00adb5;">35 x 35 cm</span></div>
+      <div>Tube Position: <span id="tubeHReadout">400</span> cm</div>
+      <div>IR Position: <span id="irHReadout">400</span> cm</div>
+      <div>Alignment: <span id="alignReadout" class="status-ready">CENTERED</span></div>
+    </div>
+
+    <svg id="simSvg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+      <!-- Floor and Ceiling Rails -->
+      <line x1="50" y1="560" x2="750" y2="560" stroke="#373e47" stroke-width="4"/>
+      <line x1="50" y1="40" x2="750" y2="40" stroke="#373e47" stroke-width="6"/>
+
+      <!-- Table Structure -->
+      <g id="buckyTableGroup">
+        <!-- Table Legs -->
+        <rect x="220" y="440" width="20" height="120" fill="#2d333f" stroke="#444c56"/>
+        <rect x="560" y="440" width="20" height="120" fill="#2d333f" stroke="#444c56"/>
+        <!-- Table Top -->
+        <rect x="180" y="430" width="440" height="12" fill="#3a4350" stroke="#718096" rx="2"/>
+        
+        <!-- Under-Table Bucky Tray -->
+        <g id="tableBuckyGroup" transform="translate(400, 460)">
+          <rect x="-120" y="0" width="240" height="18" fill="#2d333f" stroke="#444c56" rx="3"/>
+          <rect x="-90" y="-12" width="180" height="12" fill="#adbac7" stroke="#ffffff" stroke-width="2" rx="3"/>
+          <circle cx="0" cy="-6" r="4" fill="#d9383a"/>
+        </g>
+      </g>
+
+      <!-- Supine/Prone Human Phantom -->
+      <g id="humanPhantomGroup" transform="translate(400, 415)">
+        <g id="phantomFlipper" transform="scale(1, 1)">
+          <text x="-210" y="-35" fill="#00adb5" font-size="10" font-weight="bold">HEAD (CEPHALAD)</text>
+          <circle cx="-210" cy="0" r="22" fill="#3a4350" stroke="#718096" stroke-width="2"/>
+          <circle cx="-210" cy="0" r="16" fill="#1e222b" stroke="#cbd5e0" stroke-width="1.5"/>
+          
+          <rect x="-188" y="-6" width="18" height="12" fill="#3a4350"/>
+          <path d="M-170,-30 Q-180,0 -170,30 L-40,25 Q-30,0 -40,-25 Z" fill="#3a4350" stroke="#718096" stroke-width="2"/>
+          <line x1="-185" y1="-12" x2="100" y2="-12" stroke="#e2e8f0" stroke-width="6" stroke-dasharray="4,2"/>
+          
+          <text x="210" y="-35" fill="#ffaa00" font-size="10" font-weight="bold">FEET (CAUDAD)</text>
+          <path d="M-40,-26 Q-50,0 -40,26 L20,20 Q30,0 20,-20 Z" fill="#3a4350" stroke="#718096" stroke-width="2"/>
+          <rect x="20" y="-22" width="220" height="16" fill="#3a4350" stroke="#718096" rx="4"/>
+          <rect x="20" y="6" width="220" height="16" fill="#3a4350" stroke="#718096" rx="4"/>
+        </g>
+      </g>
+
+      <!-- Ceiling-Suspended Overhead X-Ray Tube Assembly -->
+      <g id="tubeAssembly" transform="translate(400, 180)">
+        <line x1="0" y1="-140" x2="0" y2="-20" stroke="#2d333f" stroke-width="14"/>
+        
+        <g id="tubeHeadPivot">
+          <rect x="-25" y="-35" width="50" height="70" fill="#00adb5" rx="8" stroke="#ffffff" stroke-width="1.5"/>
+          <circle cx="0" cy="0" r="10" fill="#181b20"/>
+          <rect x="-20" y="25" width="40" height="25" fill="#373e47" stroke="#adbac7" rx="2"/>
+
+          <!-- Primary Beam & Central Ray -->
+          <polygon id="collimatorLightBeam" points="-12,50 -75,268 75,268 12,50" fill="rgba(255, 235, 59, 0.25)" stroke="rgba(255, 235, 59, 0.6)" stroke-dasharray="4,4"/>
+          <polygon id="xrayBeam" points="-4,50 -70,268 70,268 4,50" fill="rgba(0, 255, 255, 0.0)"/>
+          <line x1="0" y1="50" x2="0" y2="268" stroke="#ffaa00" stroke-width="1.5" stroke-dasharray="3,3"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div id="console-container">
+    <div>
+      <h2>Positioning Controls</h2>
+      <div class="sub-title">Cephalic/Caudal & Collimation (Table)</div>
+    </div>
+
+    <!-- Projection Toggle -->
+    <div class="control-card">
+      <label>Patient Projection</label>
+      <div class="btn-group">
+        <button class="btn active" id="btnPA">PA Position</button>
+        <button class="btn" id="btnAP">AP Position</button>
+      </div>
+    </div>
+
+    <!-- Cephalic / Caudal Angulation Controls -->
+    <div class="control-card">
+      <label>
+        <span>Tube Direction</span>
+        <span id="angleTypeVal" style="color:#00adb5;">Perpendicular (0°)</span>
+      </label>
+      <div class="btn-group" style="margin-bottom:8px;">
+        <button class="btn" id="btnCephalic">Cephalic (LEFT)</button>
+        <button class="btn active" id="btnZero">0° Direct</button>
+        <button class="btn" id="btnCaudal">Caudal (RIGHT)</button>
+      </div>
+
+      <label>
+        <span>Angle Degree</span>
+        <span id="angleDegVal" style="color:#ffaa00;">0°</span>
+      </label>
+      <input type="range" id="angleDegSlider" min="0" max="45" value="0">
+    </div>
+
+    <!-- Field Size / Collimation Control -->
+    <div class="control-card">
+      <label>
+        <span>Field Size (Collimation)</span>
+        <span id="fieldSizeVal" style="color:#00adb5;">35 cm</span>
+      </label>
+      <input type="range" id="fieldSizeSlider" min="10" max="43" value="35">
+    </div>
+
+    <!-- Longitudinal Controls (Tube X & IR X) -->
+    <div class="control-card">
+      <label>
+        <span>X-Ray Tube Position (X)</span>
+        <span id="tubeHeightVal" style="color:#00adb5;">400 cm</span>
+      </label>
+      <input type="range" id="tubeHeightSlider" min="200" max="600" value="400">
+    </div>
+
+    <div class="control-card">
+      <label>
+        <span>Table Bucky Position (X)</span>
+        <span id="irHeightVal" style="color:#00adb5;">400 cm</span>
+      </label>
+      <input type="range" id="irHeightSlider" min="200" max="600" value="400">
+    </div>
+
+    <!-- SID -->
+    <div class="control-card">
+      <label>
+        <span>SID Distance</span>
+        <span id="sidVal">100 cm</span>
+      </label>
+      <input type="range" id="sidSlider" min="80" max="180" value="100" step="5">
+    </div>
+
+    <button id="exposeBtn">HOLD TO EXPOSE</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="resultModal">
+    <div class="modal-content">
+      <h3 style="margin:0; color:#00adb5;" id="modalTitle">Radiograph Result</h3>
+      <img id="resultImage" src="" alt="X-Ray Result"/>
+      <div>
+        <button class="close-btn" id="closeModalBtn">CLOSE RADIOGRAPH</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tubeAssembly = document.getElementById('tubeAssembly');
+    const tubeHeadPivot = document.getElementById('tubeHeadPivot');
+    const tableBuckyGroup = document.getElementById('tableBuckyGroup');
+    const phantomFlipper = document.getElementById('phantomFlipper');
+    const collimatorLightBeam = document.getElementById('collimatorLightBeam');
+    const xrayBeam = document.getElementById('xrayBeam');
+
+    const btnPA = document.getElementById('btnPA');
+    const btnAP = document.getElementById('btnAP');
+    const btnCephalic = document.getElementById('btnCephalic');
+    const btnZero = document.getElementById('btnZero');
+    const btnCaudal = document.getElementById('btnCaudal');
+    const angleDegSlider = document.getElementById('angleDegSlider');
+    const fieldSizeSlider = document.getElementById('fieldSizeSlider');
+
+    const tubeHeightSlider = document.getElementById('tubeHeightSlider');
+    const irHeightSlider = document.getElementById('irHeightSlider');
+    const sidSlider = document.getElementById('sidSlider');
+
+    const orientReadout = document.getElementById('orientReadout');
+    const angleReadout = document.getElementById('angleReadout');
+    const fieldReadout = document.getElementById('fieldReadout');
+    const angleTypeVal = document.getElementById('angleTypeVal');
+    const angleDegVal = document.getElementById('angleDegVal');
+    const fieldSizeVal = document.getElementById('fieldSizeVal');
+    const alignReadout = document.getElementById('alignReadout');
+
+    const exposeBtn = document.getElementById('exposeBtn');
+    const resultModal = document.getElementById('resultModal');
+    const resultImage = document.getElementById('resultImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    let angulationMode = 'ZERO';
+    let angleDeg = 0;
+    let fieldSize = 35;
+    let currentOrientation = 'PA';
+    let tubeX = 400;
+    let irX = 400;
+    let sid = 100;
+
+    // Web Audio Context setup for Exposure Sounds
+    let audioCtx = null;
+
+    function playRotorSound() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(450, audioCtx.currentTime + 0.3);
+      gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.3);
+    }
+
+    function playBuzzerSound() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.8);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.8);
+    }
+
+    function setAngulationMode(mode) {
+      angulationMode = mode;
+      btnCephalic.classList.toggle('active', mode === 'CEPHALIC');
+      btnZero.classList.toggle('active', mode === 'ZERO');
+      btnCaudal.classList.toggle('active', mode === 'CAUDAL');
+
+      if (mode === 'ZERO') {
+        angleDeg = 0;
+        angleDegSlider.value = 0;
+      } else if (angleDeg === 0) {
+        angleDeg = 15;
+        angleDegSlider.value = 15;
+      }
+      updatePositions();
+    }
+
+    btnCephalic.addEventListener('click', () => setAngulationMode('CEPHALIC'));
+    btnZero.addEventListener('click', () => setAngulationMode('ZERO'));
+    btnCaudal.addEventListener('click', () => setAngulationMode('CAUDAL'));
+
+    angleDegSlider.addEventListener('input', (e) => {
+      angleDeg = parseInt(e.target.value);
+      if (angleDeg === 0) {
+        setAngulationMode('ZERO');
+      } else if (angulationMode === 'ZERO') {
+        setAngulationMode('CEPHALIC');
+      }
+      updatePositions();
+    });
+
+    fieldSizeSlider.addEventListener('input', (e) => {
+      fieldSize = parseInt(e.target.value);
+      fieldSizeVal.textContent = `${fieldSize} cm`;
+      fieldReadout.textContent = `${fieldSize} x ${fieldSize} cm`;
+      updatePositions();
+    });
+
+    btnPA.addEventListener('click', () => {
+      currentOrientation = 'PA';
+      btnPA.classList.add('active');
+      btnAP.classList.remove('active');
+      phantomFlipper.setAttribute('transform', 'scale(1, 1)');
+      orientReadout.textContent = "PA";
+    });
+
+    btnAP.addEventListener('click', () => {
+      currentOrientation = 'AP';
+      btnAP.classList.add('active');
+      btnPA.classList.remove('active');
+      phantomFlipper.setAttribute('transform', 'scale(1, -1)');
+      orientReadout.textContent = "AP";
+    });
+
+    function updatePositions() {
+      let effectiveAngle = 0;
+      if (angulationMode === 'CEPHALIC') effectiveAngle = -angleDeg;
+      if (angulationMode === 'CAUDAL') effectiveAngle = angleDeg;
+
+      // Vertical position of tube based on SID
+      const tubeY = 448 - (sid * 2.5);
+      tubeAssembly.setAttribute('transform', `translate(${tubeX}, ${tubeY})`);
+      tableBuckyGroup.setAttribute('transform', `translate(${irX}, 450)`);
+      tubeHeadPivot.setAttribute('transform', `rotate(${effectiveAngle})`);
+
+      // Field Size (Collimation) Scaling on SVG Beam
+      const halfSpread = fieldSize * 2.2; 
+      const lightPts = `-12,50 -${halfSpread},268 ${halfSpread},268 12,50`;
+      const xrayPts = `-4,50 -${halfSpread - 5},268 ${halfSpread - 5},268 4,50`;
+      
+      collimatorLightBeam.setAttribute('points', lightPts);
+      xrayBeam.setAttribute('points', xrayPts);
+
+      // Readouts
+      angleDegVal.textContent = `${angleDeg}°`;
+      document.getElementById('tubeHReadout').textContent = tubeX;
+      document.getElementById('irHReadout').textContent = irX;
+
+      if (angulationMode === 'ZERO') {
+        angleTypeVal.textContent = "Perpendicular (0°)";
+        angleReadout.textContent = "0° (Perpendicular)";
+      } else if (angulationMode === 'CEPHALIC') {
+        angleTypeVal.textContent = `Cephalic (-${angleDeg}°)`;
+        angleReadout.textContent = `${angleDeg}° Cephalic (Toward Head)`;
+      } else {
+        angleTypeVal.textContent = `Caudal (+${angleDeg}°)`;
+        angleReadout.textContent = `${angleDeg}° Caudal (Toward Feet)`;
+      }
+
+      const diff = Math.abs(tubeX - irX);
+      if (diff < 15 && angleDeg === 0) {
+        alignReadout.textContent = "CENTERED";
+        alignReadout.className = "status-ready";
+      } else {
+        alignReadout.textContent = "OFF-CENTER / ANGLED";
+        alignReadout.className = "status-warn";
+      }
+    }
+
+    tubeHeightSlider.addEventListener('input', (e) => {
+      tubeX = parseInt(e.target.value);
+      document.getElementById('tubeHeightVal').textContent = `${tubeX} cm`;
+      updatePositions();
+    });
+
+    irHeightSlider.addEventListener('input', (e) => {
+      irX = parseInt(e.target.value);
+      document.getElementById('irHeightVal').textContent = `${irX} cm`;
+      updatePositions();
+    });
+
+    sidSlider.addEventListener('input', (e) => {
+      sid = parseInt(e.target.value);
+      document.getElementById('sidVal').textContent = `${sid} cm`;
+      updatePositions();
+    });
+
+    let exposeTimer;
+    
+    // Support both mouse and touch events for the expose button
+    const startExpose = (e) => {
+      e.preventDefault();
+      exposeBtn.classList.add('exposing');
+      exposeBtn.textContent = "ROTOR SPINNING...";
+      playRotorSound();
+
+      exposeTimer = setTimeout(() => {
+        exposeBtn.textContent = "EXPOSING...";
+        playBuzzerSound();
+        xrayBeam.setAttribute('fill', 'rgba(0, 255, 255, 0.7)');
+
+        setTimeout(() => {
+          exposeBtn.classList.remove('exposing');
+          exposeBtn.textContent = "HOLD TO EXPOSE";
+          xrayBeam.setAttribute('fill', 'rgba(0, 255, 255, 0.0)');
+          
+          modalTitle.textContent = `Radiograph (${currentOrientation}, ${angleReadout.textContent}, Field: ${fieldSize}x${fieldSize}cm)`;
+          resultImage.src = 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg';
+          resultModal.style.display = 'flex';
+        }, 500);
+      }, 300);
+    };
+
+    const stopExpose = () => clearTimeout(exposeTimer);
+
+    exposeBtn.addEventListener('mousedown', startExpose);
+    exposeBtn.addEventListener('touchstart', startExpose);
+    exposeBtn.addEventListener('mouseup', stopExpose);
+    exposeBtn.addEventListener('touchend', stopExpose);
+    
+    closeModalBtn.addEventListener('click', () => { resultModal.style.display = 'none'; });
+
+    updatePositions();
+  </script>
+</body>
+</html>

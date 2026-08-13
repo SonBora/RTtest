@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Ribs Oblique Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="rxriboblique.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Ribs Oblique (Axial / Oblique)
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Axial/Oblique Radiographic Projection for Axillary Ribs (RPO / LPO / RAO / LAO)
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotoribs/riboblique1.jpg" alt="Ribs Oblique Positioning 1">
+
+
+<img src="zphotoribs/riboblique2.jpg" alt="Ribs Oblique Positioning 2">
+
+
+<img src="zphotoribs/riboblique3.jpg" alt="Ribs Oblique Positioning 3">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The oblique rib projection elongates and projects the axillary portion of the ribs free of superimposition. Posterior obliques (RPO/LPO) demonstrate the side dependent (closest to IR), whereas anterior obliques (RAO/LAO) demonstrate the side elevated (farthest from IR).
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Ribs / Thoracic Cage
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+Axillary / Oblique Ribs (AP/PA Oblique)
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+35 × 43 cm (Lengthwise)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+70 – 80 (Upper) / 75 – 85 (Lower)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+10 – 20
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient standing erect or recumbent/supine depending on patient condition and upper vs. lower rib protocol.
+
+<br><br>
+
+• Rotate body 45 degrees towards affected side for Posterior Oblique (RPO/LPO demonstrates side down).
+
+<br><br>
+
+• Raise arm of affected side and rest hand on head; opposite arm placed across abdomen or on hip.
+
+<br><br>
+
+• Align mid-way between lateral border of rib cage and sternum/spine to midline of grid.
+
+<br><br>
+
+• Respiration: Full inspiration for upper ribs (1st–9th) or full expiration for lower ribs (8th–12th).
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• Central Ray perpendicular to Image Receptor.
+
+<br><br>
+
+• Upper Ribs: Center CR to level of T7 (approx. 18–20 cm below vertebra prominens).
+
+<br><br>
+
+• Lower Ribs: Center CR to level midway between xiphoid process and lower rib margin (T12/L1).
+
+<br><br>
+
+• Center IR to CR (top of IR 4 cm above shoulders for upper ribs; bottom of IR at iliac crest for lower ribs).
+
+<br><br>
+
+• Collimate tightly to area of interest.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Axillary portion of ribs projected elongated and free of superimposition with the vertebral column.
+
+<br><br>
+
+✓ Correct respiration demonstrated (above diaphragm for upper ribs; below diaphragm for lower ribs).
+
+<br><br>
+
+✓ 45-degree rotation clearly verified: spine rotated away from affected axillary rib zone.
+
+<br><br>
+
+✓ Optimum contrast and sharpness to reveal subtle cortical fractures or lesions.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Ribs Oblique (Axial / Oblique)",
+
+subtitle:
+"Axial/Oblique Radiographic Projection for Axillary Ribs (RPO / LPO / RAO / LAO)",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The oblique rib projection elongates and projects the axillary portion of the ribs free of superimposition. Posterior obliques (RPO/LPO) demonstrate the side dependent (closest to IR), whereas anterior obliques (RAO/LAO) demonstrate the side elevated (farthest from IR).",
+
+
+
+bodyPart:
+"Ribs / Thoracic Cage",
+
+
+
+projection:
+"Axillary / Oblique Ribs (AP/PA Oblique)",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient standing erect or recumbent/supine depending on patient condition and upper vs. lower rib protocol.
+
+<br><br>
+
+• Rotate body 45 degrees towards affected side for Posterior Oblique (RPO/LPO demonstrates side down).
+
+<br><br>
+
+• Raise arm of affected side and rest hand on head; opposite arm placed across abdomen or on hip.
+
+<br><br>
+
+• Align mid-way between lateral border of rib cage and sternum/spine to midline of grid.
+
+<br><br>
+
+• Respiration: Full inspiration for upper ribs (1st–9th) or full expiration for lower ribs (8th–12th).
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• Central Ray perpendicular to Image Receptor.
+
+<br><br>
+
+• Upper Ribs: Center CR to level of T7 (approx. 18–20 cm below vertebra prominens).
+
+<br><br>
+
+• Lower Ribs: Center CR to level midway between xiphoid process and lower rib margin (T12/L1).
+
+<br><br>
+
+• Center IR to CR (top of IR 4 cm above shoulders for upper ribs; bottom of IR at iliac crest for lower ribs).
+
+<br><br>
+
+• Collimate tightly to area of interest.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Axillary portion of ribs projected elongated and free of superimposition with the vertebral column.
+
+<br><br>
+
+✓ Correct respiration demonstrated (above diaphragm for upper ribs; below diaphragm for lower ribs).
+
+<br><br>
+
+✓ 45-degree rotation clearly verified: spine rotated away from affected axillary rib zone.
+
+<br><br>
+
+✓ Optimum contrast and sharpness to reveal subtle cortical fractures or lesions.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតឆ្អឹងជំនីរ Ribs Oblique (ទ្រេត / Axillary)",
+
+
+
+subtitle:
+"ការថតកាំរស្មីឆ្អឹងជំនីរផ្នែកខាងចំហៀងទិស Oblique (RPO / LPO / RAO / LAO)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត Ribs Oblique បង្ហាញផ្នែក Axillary (ខាងចំហៀង) នៃឆ្អឹងជំនីរឱ្យវែង និងជៀសផុតពីការបាំងជាន់គ្នា។ ទម្រង់ Posterior Oblique (RPO/LPO) បង្ហាញខាងដែលនៅជិតបន្ទះ IR ច្បាស់ ឯទម្រង់ Anterior Oblique (RAO/LAO) បង្ហាញខាងដែលលើកឡើងលើ។",
+
+
+
+bodyPart:
+"ឆ្អឹងជំនីរ / ទ្រូង",
+
+
+
+projection:
+"Axillary / Oblique Ribs (AP/PA Oblique)",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺឈរ ឬដេក អាស្រ័យលើសភាពអ្នកជំងឺ និងពិធីសារថតឆ្អឹងជំនីរផ្នែកលើ ឬក្រោម។
+
+<br><br>
+
+• បង្វិលខ្លួន 45 ដឺក្រេទៅខាងដែលមានបញ្ហា សម្រាប់ទម្រង់ Posterior Oblique (RPO/LPO បង្ហាញខាងនៅជាប់ IR)។
+
+<br><br>
+
+• លើកដៃខាងដែលមានបញ្ហាដាក់លើក្បាល ហើយដៃម្ខាងទៀតដាក់លើពោះ ឬចង្កេះ។
+
+<br><br>
+
+• តម្រឹមកណ្តាលចន្លោះគែមខាងនៃទ្រូង និងឆ្អឹងខ្នងឱ្យចំកណ្តាលតុ/បន្ទះ IR។
+
+<br><br>
+
+• ការដកដង្ហើម៖ ដកដង្ហើមចូលពេញសម្រាប់ឆ្អឹងជំនីរផ្នែកលើ (ទី 1–9) ឬដកដង្ហើមចេញអស់សម្រាប់ឆ្អឹងជំនីរផ្នែកក្រោម (ទី 8–12)។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់កែងទៅ IR។
+
+<br><br>
+
+• ឆ្អឹងជំនីរផ្នែកលើ៖ ចំណុចកណ្ដាលបាញ់ចូលកម្រិត T7 (ប្រហែល 18–20 ស.ម ក្រោម Vertebra Prominens)។
+
+<br><br>
+
+• ឆ្អឹងជំនីរផ្នែកក្រោម៖ ចំណុចកណ្ដាលបាញ់ចូលចន្លោះកណ្តាល Xiphoid Process និងគែមក្រោមឆ្អឹងជំនីរ (T12/L1)។
+
+<br><br>
+
+• រៀបចំកណ្តាល IR ឱ្យត្រូវនឹង CR (គែមលើ IR 4 ស.ម លើស្មាសម្រាប់ផ្នែកលើ; គែមក្រោម IR ត្រឹម Iliac Crest សម្រាប់ផ្នែកក្រោម)។
+
+<br><br>
+
+• កំណត់ព្រំដែនពន្លឺឱ្យតូចល្មមគ្របដណ្តប់តំបន់ត្រូវថត។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ ផ្នែក Axillary នៃឆ្អឹងជំនីររៀបលាតសន្ធឹងវែង និងមិនបាំងជាន់ជាមួយឆ្អឹងខ្នង។
+
+<br><br>
+
+✓ បង្ហាញការដកដង្ហើមត្រឹមត្រូវ (លើដ្យាប្រាមសម្រាប់ផ្នែកលើ និងក្រោមដ្យាប្រាមសម្រាប់ផ្នែកក្រោម)។
+
+<br><br>
+
+✓ មុំបង្វិល 45 ដឺក្រេត្រឹមត្រូវ៖ ឆ្អឹងខ្នងផ្លាស់ទីចេញពីតំបន់ឆ្អឹងជំនីរ Axillary ដែលត្រូវពិនិត្យ។
+
+<br><br>
+
+✓ កម្រិតកាំរស្មី និងភាពច្បាស់ល្អ អាចមើលឃើញការបាក់ស្រុត ឬរបួសតូចៗលើឆ្អឹងជំនីរ។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

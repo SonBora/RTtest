@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Ribs AP Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="rxribap.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Ribs AP (Lower / Below Diaphragm)
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Anteroposterior Radiographic Projection for Lower Ribs (Ribs 8–12)
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotoribs/ribap1.jpg" alt="Ribs AP Positioning 1">
+
+
+<img src="zphotoribs/ribap2.jpg" alt="Ribs AP Positioning 2">
+
+
+<img src="zphotoribs/ribap3.jpg" alt="Ribs AP Positioning 3">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The AP projection for lower ribs is performed to demonstrate pathology or fractures involving the posterior lower thoracic cage (8th through 12th ribs). It is typically exposed on full expiration in a recumbent position to push the diaphragm upward and maximize contrast against abdominal tissues.
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Ribs / Thoracic Cage
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+Anteroposterior (AP) Lower Ribs
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+35 × 43 cm (Crosswise or Lengthwise)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+75 – 85
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+12 – 25
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient supine / recumbent on table (allows abdominal organs to push diaphragm up).
+
+<br><br>
+
+• Align mid-sagittal plane (MSP) or affected side to midline of grid/table.
+
+<br><br>
+
+• Arms placed comfortably at sides or resting above head out of the ROI.
+
+<br><br>
+
+• Lower edge of Image Receptor placed at level of iliac crest.
+
+<br><br>
+
+• Exposure made on full expiration (to raise diaphragm above 8th-9th ribs).
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• Central Ray perpendicular to Image Receptor.
+
+<br><br>
+
+• Center Central Ray halfway between xiphoid process and lower rib cage (approx. level of T12 / L1).
+
+<br><br>
+
+• Center IR to CR (bottom of IR roughly at iliac crests).
+
+<br><br>
+
+• Collimate on four sides to include 8th through 12th ribs bilaterally or unilaterally as indicated.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ 8th through 12th posterior ribs clearly visible below the diaphragm.
+
+<br><br>
+
+✓ Rib bony detail and cortical margins sharply demonstrated without motion blur.
+
+<br><br>
+
+✓ No patient rotation: distance from spine to lateral rib margins equal on both sides (unless unilateral exam).
+
+<br><br>
+
+✓ Optimal exposure factors ensuring visualization of ribs through dense abdominal structures.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Ribs AP (Lower / Below Diaphragm)",
+
+subtitle:
+"Anteroposterior Radiographic Projection for Lower Ribs (Ribs 8–12)",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The AP projection for lower ribs is performed to demonstrate pathology or fractures involving the posterior lower thoracic cage (8th through 12th ribs). It is typically exposed on full expiration in a recumbent position to push the diaphragm upward and maximize contrast against abdominal tissues.",
+
+
+
+bodyPart:
+"Ribs / Thoracic Cage",
+
+
+
+projection:
+"Anteroposterior (AP) Lower Ribs",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient supine / recumbent on table (allows abdominal organs to push diaphragm up).
+
+<br><br>
+
+• Align mid-sagittal plane (MSP) or affected side to midline of grid/table.
+
+<br><br>
+
+• Arms placed comfortably at sides or resting above head out of the ROI.
+
+<br><br>
+
+• Lower edge of Image Receptor placed at level of iliac crest.
+
+<br><br>
+
+• Exposure made on full expiration (to raise diaphragm above 8th-9th ribs).
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• Central Ray perpendicular to Image Receptor.
+
+<br><br>
+
+• Center Central Ray halfway between xiphoid process and lower rib cage (approx. level of T12 / L1).
+
+<br><br>
+
+• Center IR to CR (bottom of IR roughly at iliac crests).
+
+<br><br>
+
+• Collimate on four sides to include 8th through 12th ribs bilaterally or unilaterally as indicated.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ 8th through 12th posterior ribs clearly visible below the diaphragm.
+
+<br><br>
+
+✓ Rib bony detail and cortical margins sharply demonstrated without motion blur.
+
+<br><br>
+
+✓ No patient rotation: distance from spine to lateral rib margins equal on both sides (unless unilateral exam).
+
+<br><br>
+
+✓ Optimal exposure factors ensuring visualization of ribs through dense abdominal structures.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតឆ្អឹងជំនីរ Ribs AP (ផ្នែកខាងក្រោម / ក្រោមដ្យាប្រាម)",
+
+
+
+subtitle:
+"ការថតកាំរស្មីឆ្អឹងជំនីរផ្នែកខាងក្រោមទិស Anteroposterior (ឆ្អឹងជំនីរទី 8 ដល់ទី 12)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ការថត Ribs AP ផ្នែកខាងក្រោមត្រូវបានធ្វើឡើងដើម្បីពិនិត្យមើលជំងឺ ឬការបាក់ឆ្អឹងជំនីរផ្នែកខាងក្រោម (ទី 8 ដល់ទី 12)។ ភាគច្រើនថតនៅពេលដកដង្ហើមចេញអស់ ក្នុងទម្រង់ដេក ដើម្បីឱ្យសរីរាង្គពោះរុញដ្យាប្រាមឡើងលើ និងមើលឃើញឆ្អឹងជំនីរបានច្បាស់។",
+
+
+
+bodyPart:
+"ឆ្អឹងជំនីរ / ទ្រូង",
+
+
+
+projection:
+"Anteroposterior (AP) Lower Ribs",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺដេកផ្ងារលើគ្រែ (ដើម្បីឱ្យសរីរាង្គក្នុងពោះរុញដ្យាប្រាមឡើងលើ)។
+
+<br><br>
+
+• តម្រឹមកណ្តាលរាងកាយ (MSP) ឬខាងដែលមានបញ្ហាឱ្យចំកណ្តាលតុថត។
+
+<br><br>
+
+• ដាក់ដៃសន្ធឹងចំហៀង ឬលើកផុតក្បាលដើម្បីកុំឱ្យបាំងតំបន់ត្រូវថត។
+
+<br><br>
+
+• ដាក់គែមក្រោមនៃបន្ទះ IR ត្រឹមត្រគាក (Iliac Crest)។
+
+<br><br>
+
+• ថតនៅពេលអ្នកជំងឺដកដង្ហើមចេញអស់ (ដើម្បីរុញដ្យាប្រាមឡើងលើផុតឆ្អឹងជំនីរទី 8-9)។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់កែងទៅ IR។
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ចូលចន្លោះកណ្តាលរវាង Xiphoid Process និងគែមក្រោមឆ្អឹងជំនីរ (ប្រហែលកម្រិត T12 / L1)។
+
+<br><br>
+
+• រៀបចំកណ្តាល IR ឱ្យត្រូវនឹង CR (គែមក្រោម IR ត្រឹម Iliac Crest)។
+
+<br><br>
+
+• កំណត់ព្រំដែនពន្លឺ 4 ទិសឱ្យគ្របដណ្តប់ឆ្អឹងជំនីរទី 8 ដល់ទី 12។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ មើលឃើញឆ្អឹងជំនីរខាងក្រោយទី 8 ដល់ទី 12 ច្បាស់នៅខាងក្រោមដ្យាប្រាម (Diaphragm)។
+
+<br><br>
+
+✓ ព័ត៌មានលម្អិតនៃឆ្អឹងជំនីរ និងគែមឆ្អឹងបង្ហាញច្បាស់ គ្មានការស្រអាប់ដោយសារការផ្លាស់ទី។
+
+<br><br>
+
+✓ គ្មានការបង្វិល៖ ចម្ងាយពីឆ្អឹងខ្នងទៅគែមឆ្អឹងជំនីរខាងចំហៀងស្មើគ្នាទាំងសងខាង។
+
+<br><br>
+
+✓ កម្រិតកាំរស្មីសមស្រប ដែលអាចមើលឃើញឆ្អឹងជំនីរឆ្លងកាត់ផ្នែកពោះបានច្បាស់។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

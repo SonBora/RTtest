@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#0f172a">
+
+<title>Sternum PA Oblique Radiographic Position</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+
+header{
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:bold;
+
+}
+
+
+
+.right-menu{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+
+
+
+.language{
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+.language button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+font-size:12px;
+
+font-weight:bold;
+
+padding:8px 12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+.language button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.back{
+
+background:#2563eb;
+
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+
+
+
+.title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.title h1{
+
+font-size:40px;
+
+color:#0f172a;
+
+}
+
+
+
+.title p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+
+.content{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+}
+
+
+
+
+.card h2{
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+line-height:1.7;
+
+color:#475569;
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-gallery{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+
+.image-gallery img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:3px solid #e2e8f0;
+
+transition:.3s;
+
+}
+
+
+
+.image-gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+.info{
+
+margin-top:30px;
+
+}
+
+
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+td:first-child{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+
+.right-menu{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+
+
+
+.back{
+
+padding:9px 15px;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+
+.title h1{
+
+font-size:28px;
+
+}
+
+
+
+.title p{
+
+font-size:15px;
+
+}
+
+
+
+.content{
+
+display:block;
+
+}
+
+
+
+
+.card{
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+
+
+.card h2{
+
+font-size:20px;
+
+}
+
+
+
+.card p{
+
+font-size:15px;
+
+}
+
+
+
+
+.image-gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.image-gallery img{
+
+height:230px;
+
+}
+
+
+
+
+
+.info{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:500px;
+
+}
+
+
+
+td{
+
+font-size:14px;
+
+padding:10px;
+
+}
+
+
+
+footer{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo" id="logo">
+
+🩻 Radiographic Position System
+
+</div>
+
+
+
+<div class="right-menu">
+
+
+<div class="language">
+
+<button onclick="changeLanguage('en')">
+
+EN
+
+</button>
+
+
+<button onclick="changeLanguage('kh')">
+
+KH
+
+</button>
+
+
+</div>
+
+
+
+<a href="rxsternumpa.html" class="back" id="back">
+
+← Back
+
+</a>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+<section class="container">
+
+
+
+<div class="title">
+
+
+<h1 id="title">
+
+Sternum PA Oblique (RAO)
+
+</h1>
+
+
+
+<p id="subtitle">
+
+Posteroanterior Oblique Radiographic Projection of the Sternum (Right Anterior Oblique Position)
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+<div class="content">
+
+
+
+<div class="card">
+
+
+<h2 id="positionImages">
+
+Position Images
+
+</h2>
+
+
+
+<div class="image-gallery">
+
+
+<img src="zphotosternum/sternumpa1.jpg" alt="Sternum PA Oblique Positioning 1">
+
+
+<img src="zphotosternum/sternumpa2.jpg" alt="Sternum PA Oblique Positioning 2">
+
+
+<img src="zphotosternum/sternumpa3.jpg" alt="Sternum PA Oblique Positioning 3">
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="examInfo">
+
+Examination Information
+
+</h2>
+
+
+<p id="description">
+
+The RAO position projects the sternum over the homogenous shadow of the heart, shifting dense thoracic vertebrae out of the field of view. It is used to evaluate sternal fractures, osteomyelitis, and inflammatory or arthritic changes.
+
+</p>
+
+<div class="info">
+
+
+<table>
+
+
+<tr>
+
+<td>Body Part</td>
+
+<td id="bodyPart">
+Sternum / Thoracic Cage
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Projection</td>
+
+<td id="projection">
+PA Oblique (RAO Position)
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>IR Size</td>
+
+<td>
+24 × 30 cm (Lengthwise)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>SID</td>
+
+<td>
+100 cm
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>kVp</td>
+
+<td>
+70 – 80
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>mAs</td>
+
+<td>
+25 – 40 (Breathing Technique)
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div class="card info">
+
+
+<h2 id="patientTitle">
+
+Patient Position
+
+</h2>
+
+
+
+<p id="patientText">
+
+
+• Patient standing erect or prone facing vertical grid / bucky.
+
+<br><br>
+
+• Rotate body 15 to 20 degrees into Right Anterior Oblique (RAO) position (shallower rotation for thick thorax, greater rotation for thin thorax).
+
+<br><br>
+
+• Place right arm down by side; left arm flexed above head holding grid frame for balance.
+
+<br><br>
+
+• Align long axis of sternum to midline of grid.
+
+<br><br>
+
+• Respiration: Low mA with long exposure time (3–4 seconds) during shallow breathing (orthostatic technique) to blur pulmonary vascular markings.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="rayTitle">
+
+Central Ray
+
+</h2>
+
+
+
+<p id="rayText">
+
+
+• Central Ray perpendicular to Image Receptor.
+
+<br><br>
+
+• Center Central Ray to mid-sternum (level of T7, approx. 8–10 cm below jugular notch, entering elevated left side of thorax).
+
+<br><br>
+
+• Center IR to CR (top of IR approx. 4 cm above jugular notch).
+
+<br><br>
+
+• Collimate tightly to long narrow strip over sternum.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card info">
+
+
+<h2 id="evaluationTitle">
+
+Image Evaluation Criteria
+
+</h2>
+
+
+
+<p id="evaluationText">
+
+
+✓ Entire sternum (manubrium, body, and xiphoid process) clearly demonstrated over heart shadow.
+
+<br><br>
+
+✓ Correct degree of rotation: sternum projected free from superimposition of thoracic spine.
+
+<br><br>
+
+✓ Pulmonary vascular markings blurred by orthostatic breathing technique.
+
+<br><br>
+
+✓ Sharp bony detail of sternal borders and sternoclavicular joints without motion blur of sternum.
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<footer id="footer">
+
+Radiographic Positioning System © 2026
+
+</footer>
+<script>
+
+
+const language = {
+
+
+en:{
+
+
+logo:"🩻 Radiographic Position System",
+
+back:"← Back",
+
+title:"Sternum PA Oblique (RAO)",
+
+subtitle:
+"Posteroanterior Oblique Radiographic Projection of the Sternum (Right Anterior Oblique Position)",
+
+
+positionImages:
+"Position Images",
+
+
+examInfo:
+"Examination Information",
+
+
+
+description:
+"The RAO position projects the sternum over the homogenous shadow of the heart, shifting dense thoracic vertebrae out of the field of view. It is used to evaluate sternal fractures, osteomyelitis, and inflammatory or arthritic changes.",
+
+
+
+bodyPart:
+"Sternum / Thoracic Cage",
+
+
+
+projection:
+"PA Oblique (RAO Position)",
+
+
+
+
+patientTitle:
+"Patient Position",
+
+
+
+patientText:
+`
+• Patient standing erect or prone facing vertical grid / bucky.
+
+<br><br>
+
+• Rotate body 15 to 20 degrees into Right Anterior Oblique (RAO) position (shallower rotation for thick thorax, greater rotation for thin thorax).
+
+<br><br>
+
+• Place right arm down by side; left arm flexed above head holding grid frame for balance.
+
+<br><br>
+
+• Align long axis of sternum to midline of grid.
+
+<br><br>
+
+• Respiration: Low mA with long exposure time (3–4 seconds) during shallow breathing (orthostatic technique) to blur pulmonary vascular markings.
+`,
+
+
+
+
+
+rayTitle:
+"Central Ray",
+
+
+
+rayText:
+`
+• Central Ray perpendicular to Image Receptor.
+
+<br><br>
+
+• Center Central Ray to mid-sternum (level of T7, approx. 8–10 cm below jugular notch, entering elevated left side of thorax).
+
+<br><br>
+
+• Center IR to CR (top of IR approx. 4 cm above jugular notch).
+
+<br><br>
+
+• Collimate tightly to long narrow strip over sternum.
+`,
+
+
+
+
+evaluationTitle:
+"Image Evaluation Criteria",
+
+
+
+evaluationText:
+`
+✓ Entire sternum (manubrium, body, and xiphoid process) clearly demonstrated over heart shadow.
+
+<br><br>
+
+✓ Correct degree of rotation: sternum projected free from superimposition of thoracic spine.
+
+<br><br>
+
+✓ Pulmonary vascular markings blurred by orthostatic breathing technique.
+
+<br><br>
+
+✓ Sharp bony detail of sternal borders and sternoclavicular joints without motion blur of sternum.
+`,
+
+
+
+footer:
+"Radiographic Positioning System © 2026"
+
+
+},
+
+
+
+
+
+
+kh:{
+
+
+
+logo:
+"🩻 ប្រព័ន្ធទីតាំងថតកាំរស្មី",
+
+
+
+back:
+"← ត្រឡប់",
+
+
+
+title:
+"ថតឆ្អឹងទ្រូង Sternum PA Oblique (RAO)",
+
+
+
+subtitle:
+"ការថតកាំរស្មីឆ្អឹងទ្រូងទិស Posteroanterior Oblique (ទីតាំង Right Anterior Oblique)",
+
+
+
+
+positionImages:
+"រូបភាពទីតាំង",
+
+
+
+examInfo:
+"ព័ត៌មានការពិនិត្យ",
+
+
+
+description:
+"ទីតាំង RAO បាញ់បង្ហាញឆ្អឹងទ្រូង (Sternum) ឱ្យធ្លាក់លើស្មើសាច់នៃរូបភាពបេះដូង ដោយរុញឆ្អឹងខ្នងទ្រូងចេញផុតពីការបាំង។ វាប្រើដើម្បីពិនិត្យការបាក់ឆ្អឹងទ្រូង រលាកឆ្អឹង ឬជំងឺរលាកសន្លាក់ឆ្អឹងទ្រូង។",
+
+
+
+bodyPart:
+"ឆ្អឹងទ្រូង (Sternum)",
+
+
+
+projection:
+"PA Oblique (RAO Position)",
+
+
+
+
+patientTitle:
+"ទីតាំងអ្នកជំងឺ",
+
+
+
+
+patientText:
+`
+• អ្នកជំងឺឈរ ឬដេកផ្កាប់ បែរមុខទៅរក IR បញ្ឈរ។
+
+<br><br>
+
+• បង្វិលខ្លួន 15 ទៅ 20 ដឺក្រេ ចូលទីតាំង Right Anterior Oblique - RAO (បង្វិលតិចសម្រាប់ទ្រូងក្រាស់ បង្វិលច្រើនសម្រាប់ទ្រូងស្តើង)។
+
+<br><br>
+
+• ដាក់ដៃស្តាំចុះក្រោមចំហៀងខ្លួន ឯដៃឆ្វេងលើកឡើងលើតោងជើងទប់ខ្លួន។
+
+<br><br>
+
+• តម្រឹមកណ្តាលឆ្អឹងទ្រូងឱ្យចំកណ្តាលតុ/បន្ទះ IR។
+
+<br><br>
+
+• ការដកដង្ហើម៖ ប្រើ mA ទាប និងរយៈពេលថតយូរ (3–4 វិនាទី) ពេលអ្នកជំងឺដកដង្ហើមតិចៗ (Orthostatic technique) ដើម្បីធ្វើឱ្យរូបភាពសរសៃឈាមសួតព្រាល បង្កើនភាពច្បាស់នៃឆ្អឹងទ្រូង។
+`,
+
+
+
+
+
+rayTitle:
+"កាំរស្មីកណ្ដាល",
+
+
+
+
+rayText:
+`
+• CR បាញ់កែងទៅ IR។
+
+<br><br>
+
+• ចំណុចកណ្ដាលបាញ់ចូលចំកណ្តាល Sternum (កម្រិត T7, ប្រហែល 8–10 ស.ម ក្រោម Jugular Notch ដោយចូលតាមចំហៀងឆ្វេងនៃទ្រូង)។
+
+<br><br>
+
+• រៀបចំកណ្តាល IR ឱ្យត្រូវនឹង CR (គែមលើ IR 4 ស.ម លើ Jugular Notch)។
+
+<br><br>
+
+• បង្រួមព្រំដែនពន្លឺឱ្យតូចចង្អៀត តាមបណ្ដោយឆ្អឹងទ្រូង។
+`,
+
+
+
+
+
+evaluationTitle:
+"លក្ខណៈវាយតម្លៃរូបភាព",
+
+
+
+
+
+evaluationText:
+`
+✓ បង្ហាញឆ្អឹងទ្រូងទាំងមូល (Manubrium, Body, និង Xiphoid process) ច្បាស់លើរូបភាពបេះដូង។
+
+<br><br>
+
+✓ មុំបង្វិលត្រឹមត្រូវ៖ ឆ្អឹងទ្រូងផ្លាស់ទីចេញផុតពីការបាំងជាន់នៃឆ្អឹងខ្នងទ្រូង។
+
+<br><br>
+
+✓ សរសៃឈាមសួតព្រាលដោយសារបច្ចេកទេសដកដង្ហើម orthostatic breathing។
+
+<br><br>
+
+✓ បង្ហាញគែមឆ្អឹងទ្រូង និងសន្លាក់ Sternoclavicular ច្បាស់ គ្មានការព្រាលនៃឆ្អឹងទ្រូង។
+`,
+
+
+
+
+footer:
+"ប្រព័ន្ធទីតាំងថតកាំរស្មី © 2026"
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+function changeLanguage(lang){
+
+
+let t = language[lang];
+
+
+
+document.getElementById("logo").innerHTML=t.logo;
+
+
+document.getElementById("back").innerHTML=t.back;
+
+
+
+document.getElementById("title").innerHTML=t.title;
+
+
+document.getElementById("subtitle").innerHTML=t.subtitle;
+
+
+
+document.getElementById("positionImages").innerHTML=t.positionImages;
+
+
+
+document.getElementById("examInfo").innerHTML=t.examInfo;
+
+
+
+document.getElementById("description").innerHTML=t.description;
+
+
+
+document.getElementById("bodyPart").innerHTML=t.bodyPart;
+
+
+
+document.getElementById("projection").innerHTML=t.projection;
+
+
+
+document.getElementById("patientTitle").innerHTML=t.patientTitle;
+
+
+
+document.getElementById("patientText").innerHTML=t.patientText;
+
+
+
+document.getElementById("rayTitle").innerHTML=t.rayTitle;
+
+
+
+document.getElementById("rayText").innerHTML=t.rayText;
+
+
+
+document.getElementById("evaluationTitle").innerHTML=t.evaluationTitle;
+
+
+
+document.getElementById("evaluationText").innerHTML=t.evaluationText;
+
+
+
+document.getElementById("footer").innerHTML=t.footer;
+
+
+
+localStorage.setItem(
+"language",
+lang
+);
+
+
+}
+
+
+
+
+
+
+
+window.onload=function(){
+
+
+let saved =
+localStorage.getItem("language");
+
+
+
+if(saved){
+
+
+changeLanguage(saved);
+
+
+}
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
